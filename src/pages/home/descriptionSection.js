@@ -1,7 +1,7 @@
 import React from 'react'
 import "bootstrap-css-only/css/bootstrap.min.css"
 import "@fortawesome/fontawesome-free/css/all.min.css"
-import "../styles/descriptionSection.css"
+import "../../styles/descriptionSection.css"
 
 const DescriptionSection =() =>{
     return (
