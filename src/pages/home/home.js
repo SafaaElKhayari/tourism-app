@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DescriptionSection from './descriptionSection'
 import Footer from '../../components/navigation/footer'
 import UpcomingTrips from './upcomingTrips'
+import "../../styles/home.css"
 
 export default class Home extends Component {
     render() {

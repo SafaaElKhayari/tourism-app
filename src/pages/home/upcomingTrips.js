@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/upcomingtrips.css';
 import {Button,Row,Col, Container} from 'react-bootstrap';
 import "bootstrap-css-only/css/bootstrap.min.css";
 import tripPicture from "../../images/tripImage.jpeg";
