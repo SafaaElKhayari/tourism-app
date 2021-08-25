@@ -1,0 +1,184 @@
+.popular_destinations {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 57px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #0a4843;
+}
+
+h2 {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  margin-bottom: 50px;
+}
+.main_container {
+  position: relative;
+  margin: 10px 20px;
+  height: 500px;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+  border-radius: 20px;
+  margin-bottom: 100px;
+}
+img {
+  width: 350px;
+}
+.images {
+  position: relative;
+}
+
+.img1 {
+  height: 300px;
+  position: absolute;
+  top: 0px;
+  left: 60px;
+  border-radius: 10px;
+  z-index: 1;
+  border: solid 3px rgb(3, 45, 85);
+}
+.img2 {
+  height: 300px;
+  position: absolute;
+  top: 80px;
+  left: 420px;
+  border-radius: 10px;
+  border: solid 3px rgb(23, 59, 42);
+  z-index: 1;
+}
+.img3 {
+  height: 300px;
+  position: absolute;
+  top: 0px;
+  left: 780px;
+  border-radius: 10px;
+  border: solid 3px rgb(3, 45, 85);
+  z-index: 1;
+}
+.small_container1 {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 290px;
+  background-color: white;
+  border: solid 1px rgb(3, 45, 85);
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.text1 {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(3, 45, 85);
+}
+.icon1 {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+}
+
+.small_container2 {
+  display: inline-block;
+  position: absolute;
+  top: 100px;
+  left: 650px;
+  background-color: white;
+  border: solid 1px rgb(23, 59, 42);
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  z-index: 2;
+  cursor: pointer;
+}
+.text2 {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0a4843;
+}
+.icon2 {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+}
+
+.small_container3 {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 1010px;
+  background-color: white;
+  border: solid 1px rgb(3, 45, 85);
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  z-index: 2;
+  cursor: pointer;
+}
+.text3 {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(3, 45, 85);
+}
+.icon3 {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+}
+.border1 {
+  position: absolute;
+  top: 140px;
+  left: 350px;
+  width: 350px;
+  height: 370px;
+  border: solid 4px #0a4843;
+  border-radius: 10px;
+  z-index: 0;
+}
+.border2 {
+  position: absolute;
+  top: 80px;
+  left: 710px;
+  width: 360px;
+  height: 350px;
+  border: solid 4px rgb(3, 45, 85);
+  border-radius: 10px;
+  z-index: 0;
+}
+.border3 {
+  position: absolute;
+  top: 80px;
+  left: 40px;
+  width: 300px;
+  height: 350px;
+  border: solid 4px rgb(3, 45, 85);
+  z-index: 0;
+  border-radius: 10px;
+}
+
+figure img {
+  transition: 1s ease;
+}
+
+figure img:hover {
+  border-radius: 50%;
+  transition: 1s ease;
+}
