@@ -13,10 +13,10 @@
     font-family: var(--font-family);
     position: relative;
     width: 1300px;
-    /* height: 1000px; */
+    height: auto;
     overflow: hidden;
     /* padding: 40px; */
-    padding-top: 50px;
+    padding-top: 0;
     padding-bottom: 80px;
 }
 
@@ -127,7 +127,7 @@
 
 .container .trips{
   padding-top: 90px;
-  padding-bottom: 30px;
+  margin-bottom: 90px;
 }
 
 .post-module {
@@ -230,7 +230,9 @@
 }
 
 .post-module .post-content .post-meta {
-  margin: 20px 0 0;
+  margin-right:0;
+  margin-left: 0;
+  margin: 20px;
   color: #999999;
 }
 .post-module .post-content .joinBtn{

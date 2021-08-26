@@ -3,7 +3,8 @@ import akshur from '../../assets/logos/akshur.jpg'
 import medina2 from '../../assets/logos/medina2.jpg'
 import Stehat_beatch from '../../assets/logos/Stehat_beatch.jpg'
 import { FiMapPin } from "react-icons/fi";
-import React from 'react'
+import React from 'react';
+import { MDBContainer } from 'mdb-react-ui-kit';
 
 function Popular_destination() {
   let circleClasses = "inline-block p-7 rounded-full w-20 mx-auto";
@@ -12,9 +13,9 @@ function Popular_destination() {
 
 
     return (
-      <div className="main_container">
+      <MDBContainer breakpoint="xxl"> <div className="main_container">
         <h2 className="popular_destinations"> Popular Destinations in Chefchaouen</h2>
-        <div className="images">
+        <div className="pop_images">
           
           <div className="small_container2 ">
               <span className="icon2"> <FiMapPin style={iconGreen}/></span> 
@@ -35,7 +36,8 @@ function Popular_destination() {
        <div className="border1"></div>
        <div className="border2"></div>
        <div className="border3"></div>
-      </div>
+      </div></MDBContainer>
+     
       
    
     )

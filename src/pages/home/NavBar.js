@@ -13,7 +13,7 @@ function NavBar() {
     window.onscroll = function() {myFunction()};
 
     function myFunction() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         setScroll(true);
     } else {
         setScroll(false);
@@ -40,26 +40,26 @@ function NavBar() {
     
     return (
         
-        <nav class = {`${scroll ? 'navbar navbar-nav-scroll  navbar-expand-lg navbar-light  fixed-top bg-light'
-         : 'navbar navbar-nav-scroll  navbar-expand-lg navbar-light  fixed-top'
+        <nav class = {`${scroll ? 'Nav navbar navbar-nav-scroll  navbar-expand-lg navbar-light  fixed-top bg-light'
+         : 'Nav navbar navbar-nav-scroll  navbar-expand-lg navbar-light  fixed-top'
           }`}>
             <div class="container-fluid">
-                <img className="logo" src={logo} alt="logo" />
+                <img className="navbar-logo" src={logo} alt="logo" />
 
                 <div class="nav-header navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link"  aria-current="page" href="#" onClick={handleClick}>Home</a>
+                            <a class="nav-link"  aria-current="page" href="#!" onClick={handleClick}>Home</a>
                             <div ref={underline} className="underline"></div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"  href="#" onClick={handleClick}>Destinations</a>
+                            <a class="nav-link"  href="#!" onClick={handleClick}>Destinations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onClick={handleClick}>Trips</a>
+                            <a class="nav-link" href="#!" onClick={handleClick}>Trips</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" onClick={handleClick}>Tours</a>
+                            <a class="nav-link" href="#!" tabindex="-1" aria-disabled="true" onClick={handleClick}>Tours</a>
                         </li>
                         <div className="sign">
                             <button type="button" class="btn btn-light">sign in </button>
