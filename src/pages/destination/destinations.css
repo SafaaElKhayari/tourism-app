@@ -19,6 +19,15 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.head-container2 {
+  margin-top: 100px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+    url("../../assets/headImage2.jpg");
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .head-title {
   display: flex;
