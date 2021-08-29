@@ -1,6 +1,5 @@
 import React from "react";
 import "bootstrap-css-only/css/bootstrap.min.css";
-import destinationsHeadImg from "../assets/headImage.png";
 
 
 const HeadSection =(props)=>{ 

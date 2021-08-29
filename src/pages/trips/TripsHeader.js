@@ -3,7 +3,7 @@ import tourist_trips from '../../assets/tourist_trips.jpg';
 import {Container} from'react-bootstrap';
 
 import { MDBCard,MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
-function Trips_header() {
+function TripsHeader() {
     return (
 
      <Container>
@@ -57,4 +57,4 @@ function Trips_header() {
 
 }
 
-export default Trips_header
+export default TripsHeader
