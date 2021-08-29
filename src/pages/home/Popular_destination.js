@@ -4,7 +4,7 @@ import medina2 from '../../assets/logos/medina2.jpg'
 import Stehat_beatch from '../../assets/logos/Stehat_beatch.jpg'
 import { FiMapPin } from "react-icons/fi";
 import React from 'react';
-import { MDBContainer } from 'mdb-react-ui-kit';
+import {MDBContainer} from "mdb-react-ui-kit";
 
 function Popular_destination() {
   let circleClasses = "inline-block p-7 rounded-full w-20 mx-auto";

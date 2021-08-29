@@ -9,20 +9,11 @@
   --darkGreen: #28857d;
   --darkerGreen: #0a4843;
 }
-/* .bg */
+
+/* Styling Destinations Header */
 .head-container {
   margin-top: 100px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url("../../assets/headImage.png");
-  height: 50vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.head-container2 {
-  margin-top: 100px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url("../../assets/headImage2.jpg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
   height: 50vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,12 +22,15 @@
 
 .head-title {
   display: flex;
+  word-wrap:break-word;
+  max-width: 900px;
   font-family: "Playfair Display", serif;
   font-size: 60px;
   font-style: normal;
   font-weight: 700;
-  padding-top: 70px;
+  padding-top: 150px;
   padding-bottom: 30px;
+
 }
 
 .head-container .discover-btn {

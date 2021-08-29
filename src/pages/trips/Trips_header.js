@@ -1,11 +1,13 @@
 import React from 'react'
-import tourist_trips from '../../assets/tourist_trips.jpg'
-import { MDBCard,MDBBtn,MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import tourist_trips from '../../assets/tourist_trips.jpg';
+import {Container} from'react-bootstrap';
+
+import { MDBCard,MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 function Trips_header() {
     return (
 
-     
-        <MDBRow className='container_trips row-cols-1 row-cols-md-2 g-4'>
+     <Container>
+        <MDBRow className=' container_trips row-cols-1 row-cols-md-2 g-4 mt-3'>
             {Array.from({ length: 10 }).map((_, idx) => (
             <MDBCol>
             <MDBCard style={{ maxWidth: '540px' }}>
@@ -42,6 +44,7 @@ function Trips_header() {
 
     
       </MDBRow>
+      </Container>
 
 
 

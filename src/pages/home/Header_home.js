@@ -2,7 +2,7 @@ import React from 'react'
 import './header_home.css'
 import chaouen from '../../assets/logos/chaouen.jpeg'
 import "bootstrap-css-only/css/bootstrap.min.css";
-import { MDBContainer } from 'mdb-react-ui-kit';
+import { MDBContainer } from 'mdbreact';
 
 function Header_home() {
     return (
