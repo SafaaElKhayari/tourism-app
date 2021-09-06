@@ -16,5 +16,4 @@ function Trips() {
         </div>
     )
 }
-
 export default Trips;
