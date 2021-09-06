@@ -1,16 +1,17 @@
 import React from 'react'
 import NavBar from '../home/NavBar'
 import Footer from '../../components/navigation/footer'
-import HeadTrip from './headTrip'
 import '../../styles/Trips_header.css'
-import Trips_header from './Trips_header'
+import TripsHeader from './TripsHeader'
+import HeadSection from '../../components/headerComp'
+import tripsHeadImage from "../../assets/headImage2.jpg"
 
 function Trips() {
     return (
         <div>
         <NavBar/>
-        <HeadTrip/>
-        <Trips_header/>
+        <HeadSection style={{backgroundImage: `url(${tripsHeadImage})`}} title="Exclusive trips chosen just for you" />
+        <TripsHeader/>
         <Footer/>
         </div>
     )

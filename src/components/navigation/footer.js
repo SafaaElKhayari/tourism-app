@@ -37,7 +37,7 @@ const Footer = () => {
             <img className="logo" src={logo} alt="this is a logo"></img>
           </MDBCol>
           <MDBCol md="3" lg="4" xl="3" className="mb-4">
-            <h6 className="text-uppercase font-weight-bold title">
+            <h6 className="text-uppercase title">
               <strong>About us</strong>
             </h6>
             <hr className="line accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
@@ -46,7 +46,7 @@ const Footer = () => {
             </p>
           </MDBCol>
           <MDBCol md="2" lg="2" xl="2" className="mb-4">
-            <h6 className="text-uppercase font-weight-bold  title">
+            <h6 className="text-uppercase title">
               <strong>Menu</strong>
             </h6>
             <hr className="line accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
@@ -65,7 +65,7 @@ const Footer = () => {
             
           </MDBCol>
           <MDBCol md="4" lg="3" xl="3" className="mb-4">
-            <h6 className="text-uppercase font-weight-bold title">
+            <h6 className="text-uppercase title">
               <strong>Contact</strong>
             </h6>
             <hr className="line accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
