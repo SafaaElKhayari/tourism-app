@@ -7,7 +7,6 @@ import React from 'react';
 import { MDBContainer } from 'mdb-react-ui-kit';
 
 function Popular_destination() {
-  let circleClasses = "inline-block p-7 rounded-full w-20 mx-auto";
   let iconGreen = { color: "#0a4843", fontSize: "1.5em" };
   let iconBlue = { color: "#032d55", fontSize: "1.5em" };
 

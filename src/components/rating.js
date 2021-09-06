@@ -7,11 +7,11 @@ const StarRating = () =>{
     const [rating,setRating] =useState(null);
     const [hover,setHover] =useState(null);
     return (
-        <div>
+        <div >
             {[ ...Array(5)].map((star,i)=>{
                 const ratingValue = i+1;
                 return (
-                <label>
+                <label key={i}>
                     <input 
                         type="radio" 
                         name="rating" 

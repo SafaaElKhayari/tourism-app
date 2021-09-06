@@ -10,7 +10,7 @@ import "../../styles/home.css"
 function home() {
     return (
         <div>
-            <NavBar/>
+            <NavBar scro={false}/>
             <Header_home/>
             <DescriptionSection/>
             <Popular_destination/>

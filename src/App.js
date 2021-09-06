@@ -6,8 +6,8 @@ import Trips from './pages/trips/Trips';
 function App() {
   return (
     <div className="App">
-      {/* <Home /> <DestinationsPage/> */}
-      <Trips/>
+      {/*<Home /> <Trips/> */}
+       <DestinationsPage/>
       
     </div>
   );

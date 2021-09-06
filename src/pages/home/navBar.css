@@ -7,7 +7,7 @@
 
 .sign {
   position: absolute;
-  top: 20px;
+  top: 26px;
   right: 25px;
 }
 
@@ -28,15 +28,63 @@
 }
 
 .nav-item a:hover {
-  color: #0a4843 !important;
-  font-weight: 600;
+  color: #0a4843;
+  font-weight: 800;
 }
+.nav-item a:focus {
+  color: #0a4843 !important;
+  font-weight: 800;
+}
+
 .underline {
   position: absolute;
   height: 0.12rem;
-  background-color: #0a4843;
+  background-color: #0a4843 !important;
 }
 .Nav {
   box-shadow: none !important;
   border: none !important;
+}
+.toggle-btn {
+  display: none;
+  border-radius: 10px;
+  width: 80px;
+  height: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav-item {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .nav-item a:hover {
+    color: #0a4843 !important;
+    font-weight: 800;
+    background-color: lawngreen;
+  }
+  .nav-link {
+    width: 115px !important;
+  }
+  .underline {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .toggle-btn {
+    display: inline !important;
+  }
+
+  .close-side-bar {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.sidebar {
+  display: block !important;
+}
+
+.hov a:hover {
+  color: #0a4843 !important;
+  font-weight: 800;
+  letter-spacing: 1px;
 }

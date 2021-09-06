@@ -1,6 +1,6 @@
 import React from 'react'
 import tourist_trips from '../../assets/tourist_trips.jpg'
-import { MDBCard,MDBBtn,MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import { MDBCard,MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 function Trips_header() {
     return (
 

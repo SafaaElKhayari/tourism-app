@@ -1,93 +1,154 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
-    --font-family : 'Poppins', sans-serif;
-    --black : #212121;
-    --clearGray : #E1DEDE;
-    --darkGray :  #C5C2C2;
-    --darkGreen :#28857D;
+  --font-family: "Poppins", sans-serif;
+  --black: #212121;
+  --clearGray: #e1dede;
+  --darkGray: #c5c2c2;
+  --darkGreen: #28857d;
 }
 
-*{
-    font-family: var(--font-family);
+* {
+  font-family: var(--font-family);
 }
-.place-card{
-    /* padding-top: 10px; */
-    padding-bottom: 20px;
-    margin-bottom: 0;
-    /* width: auto;
-    height: auto; */}
-
-.categories-menu{
-    padding: 20px;
-    padding-bottom: 0;
-    padding-top: 0;
-    position: relative;
-    color: gray;
-    font-size: 14px;
-    font-weight: normal;
-    text-transform: uppercase;
+.place-card {
+  /* padding-top: 10px; */
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  /* width: auto;
+    height: auto; */
 }
 
-.link:hover{
-    cursor: pointer;
-    color: var(--darkGreen);
-    text-decoration: underline;
-}
-.place-category{
-    display: inline-flex;
-    margin-bottom: 0;
-    color: maroon;
-    font-size:14px;
-    font-style: normal;
-    font-weight: 400;
+.categories-menu {
+  padding: 20px;
+  padding-bottom: 0;
+  padding-top: 0;
+  position: relative;
+  color: gray;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-.rating-comp{
-    padding-top: 0;
-    padding-right: 0;
-    padding-left: 70px;
-    padding-bottom: 0;
-
+.link:hover {
+  cursor: pointer;
+  color: var(--darkGreen);
+  text-decoration: underline;
 }
-.place-name{
-    margin-top: 0;
-    margin-bottom: 2px;
-    font-style: normal;
-    font-size: 18px;
-    font-weight: 600;
-    color: #444444;
-}
-.place-description{
-    font-size: 10px;
-    color: #615F5F;
-    line-height: 15px;
-    /* display: flex; */
-    text-align: justify;
-}
-.active{
-    color: var(--darkGreen) !important;
-    font-weight: 400;
+.place-category {
+  display: inline-flex;
+  margin-bottom: 0;
+  color: maroon;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
 }
 
-.place-card .see-more-btn{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    height: 35px;
-    width: 125px;
-    background-color: #38B4AA;
-    border-radius: 10px;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    text-transform:capitalize;
-    color: white;
-    margin-left: 40px;
-    margin-right: 10px;
-    margin-top: -25px;
-    position: absolute;
-
+.rating-comp {
+  margin-left: 50px;
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
 }
-    
+.place-name {
+  margin-top: 0;
+  margin-bottom: 2px;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 600;
+  color: #444444;
+}
+.place-description {
+  font-size: 10px;
+  color: #615f5f;
+  line-height: 15px;
+  /* display: flex; */
+  text-align: justify;
+}
+.active {
+  color: var(--darkGreen) !important;
+  font-weight: 400;
+}
+
+.place-card .see-more-btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  height: 35px;
+  width: 125px;
+  background-color: #e1dede;
+  border-radius: 10px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-transform: capitalize;
+  color: #212121;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-top: -25px;
+  position: absolute;
+}
+.see-more-choose-mode {
+  margin-left: 65px !important;
+}
+.place-card .add-to-card_btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  height: 35px;
+  width: 125px;
+  background-color: #38b4aa;
+  border-radius: 10px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-transform: capitalize;
+  color: white;
+  margin-left: 40px;
+  margin-right: 10px;
+  margin-top: -25px;
+  position: absolute;
+}
+.bor {
+  border: solid 5px #28857d !important;
+}
+.place-card .counter {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  height: 50px;
+  width: 50px;
+  background-color: #38b4aa;
+  border-radius: 50px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-transform: capitalize;
+  color: white;
+  margin-left: 40px;
+  margin-right: 10px;
+  margin-top: -25px;
+  position: absolute;
+  z-index: 2;
+  right: -15px;
+  top: 20px;
+}
+.alert-color {
+  background-color: #28857d !important;
+  border-color: #e1dede !important;
+  color: white !important;
+}
+.alert {
+  padding-bottom: 5px !important;
+  padding-top: 5px !important;
+}
+.btn-close {
+  position: absolute;
+  top: -10px !important;
+  right: 0px;
+}
