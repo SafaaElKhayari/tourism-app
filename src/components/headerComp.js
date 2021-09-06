@@ -1,5 +1,5 @@
 import React from "react";
-import "bootstrap-css-only/css/bootstrap.min.css";
+ 
 
 
 const HeadSection =(props)=>{ 
