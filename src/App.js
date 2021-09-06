@@ -11,8 +11,8 @@ const CustomTour=lazy(()=>import('./pages/customTour/customTour'))
 function App() {
   return (
     <div className="App">
-      <Suspense  fallback={<div>Chargement...</div>} >
-      <CustomTour/>
+      <Suspense  fallback={<div>Chargement...</div>}   >
+        <CustomTour/>
       </Suspense>
       {/* <Home /> */}
        {/* <DestinationsPage/> */}
