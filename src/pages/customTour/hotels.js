@@ -12,9 +12,9 @@ export default class HotelsComponent extends Component {
     render() {
         return (
             <Container fluid>
-                <Row md={2} className="pt-2">
+                <Row  className="pt-2">
                     {Array.from({ length: 8 }).map((_, idx) => (
-                    <Col sm className="hotel-card">
+                    <Col md={3}sm className="hotel-card" key={idx}>
                         <Card>
                             <Card.Img variant="top" src={image}/>
                             <Card.Body>

@@ -47,9 +47,9 @@ function Places({card_mode}) {
                     </Nav>
                 </Col>
             </Row> 
-            {closeAlert && <div class="alert alert-primary alert-dismissible alert-color" role="alert" id="liveAlert">
+            {closeAlert && <div className="alert alert-primary alert-dismissible alert-color" role="alert" id="liveAlert">
             <strong>Nice!</strong> {counter} places have been added.
-            <button type="button" onClick={()=>{setCloseAlert(false)}} class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" onClick={()=>{setCloseAlert(false)}} className="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
           </div> }
             
             

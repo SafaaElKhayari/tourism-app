@@ -43,32 +43,32 @@ function NavBar({scro=true}) {
  
     return (
         
-        <nav class = {`${scroll ? 'Nav navbar   navbar-expand-lg navbar-light  fixed-top bg-light'
+        <nav className = {`${scroll ? 'Nav navbar   navbar-expand-lg navbar-light  fixed-top bg-light'
          : 'Nav navbar   navbar-expand-lg navbar-light  fixed-top'
           }`}>
-            <div class="container-fluid">
+            <div className="container-fluid">
                 <img className="navbar-logo" src={logo} alt="logo" />
 
-                <div class="nav-header navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li className={`${showMenu?"sidebar hov":"close-side-bar"}`} class="nav-item">
-                            <a class="nav-link"  aria-current="close-side-barage" href="#!" onClick={handleClick}>Home</a>
+                <div className="nav-header navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
+                            <a className="nav-link"  aria-current="close-side-barage" href="#!" onClick={handleClick}>Home</a>
                             <div ref={underline} className="underline"></div>
                         </li>
-                        <li  className={`${showMenu?"sidebar hov":"close-side-bar"}`} class="nav-item">
-                            <a class="nav-link "  href="#!" onClick={handleClick}>Destinations</a>
+                        <li  className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
+                            <a className="nav-link "  href="#!" onClick={handleClick}>Destinations</a>
                         </li>
-                        <li className={`${showMenu?"sidebar hov ":"close-side-bar"}`} class="nav-item ">
-                            <a class="nav-link" href="#!" onClick={handleClick}>Trips</a>
+                        <li className={`${showMenu?"sidebar hov ":"close-side-bar"}`} className="nav-item ">
+                            <a className="nav-link" href="#!" onClick={handleClick}>Trips</a>
                         </li>
-                        <li className={`${showMenu?"sidebar hov":"close-side-bar"}`} class="nav-item">
-                            <a class="nav-link" href="#!" tabindex="-1" aria-disabled="true" onClick={handleClick}>Tours</a>
+                        <li className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
+                            <a className="nav-link" href="#!" tabIndex="-1" aria-disabled="true" onClick={handleClick}>Tours</a>
                         </li>
         
-                        <div class="container-sm" className="sign">
+                        <div className="container-sm" className="sign">
                         <button onClick={handleToggleClick} className='toggle-btn'><FaBars /></button>
-                            <button type="button" class="btn btn-light">sign in </button>
-                            <button type="button" class="btn btn-dark">sign up</button>
+                            <button type="button" className="btn btn-light">sign in </button>
+                            <button type="button" className="btn btn-dark">sign up</button>
                         </div>
                     </ul>
 

@@ -6,7 +6,7 @@ function ChoosePlaces(props) {
         <div>
             <h3 className="question">{props.title}</h3>
             <h5 className="subquestion">{props.subtitle}</h5>
-            <Places/>
+            <Places card_mode={true}/>
         </div>
     )   
 }
