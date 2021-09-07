@@ -1,0 +1,55 @@
+.modal {
+  display: block !important;
+  top: 100px !important;
+  padding: 15px !important;
+}
+
+.fade:not(.show) {
+  opacity: 1 !important;
+}
+.header-mod {
+  height: 300px;
+}
+.header-caro {
+  height: 200px;
+  width: 95%;
+}
+.close {
+  position: absolute;
+  top: 20px !important;
+  right: 10px;
+  z-index: 2;
+}
+.modal-content {
+  padding: 0px;
+  width: 900px !important;
+}
+.container-pics {
+  display: grid;
+}
+.card-text {
+  padding-top: 20px;
+}
+.card-text button {
+  padding: 5px;
+  text-decoration: none;
+  color: #f0194d;
+  border: 2px solid #f0194d;
+}
+.card-text button:hover {
+  text-decoration: none;
+  background-color: #f0194d;
+  color: blanchedalmond;
+  border: 2px solid #f0194d;
+}
+.card-text small {
+  padding-right: 80px;
+  color: #28857d !important;
+}
+.containerToast {
+  width: 900px;
+}
+.img-toast-caro {
+  height: 300px;
+  width: 900px !important;
+}

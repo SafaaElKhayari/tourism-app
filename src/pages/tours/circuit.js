@@ -18,7 +18,7 @@ function Circuit() {
 	if(value<0){
 		setValue(table.length-1);
 	}
-	console.log(table.length)
+
     return (
     <div className="py-4 cont" >
 		<div className="container py-3">
@@ -69,9 +69,6 @@ function Circuit() {
 				<span className="visually-hidden">Next</span>
 			  </button>
 			</div>
-
-
-			
 			   </div>
 		  
 

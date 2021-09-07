@@ -14,7 +14,7 @@ export default class RestaurantsComponent extends Component {
            
             <Container fluid>
                 <Row className="pt-2">
-                    {Array.from({ length: 9 }).map((_, idx) => (
+                    {Array.from({ length: 8 }).map((_, idx) => (
                     <Col  md={3} key={idx} sm className="restaurant-card">
                         <Card>
                             <Card.Img variant="top" src={image}/>
