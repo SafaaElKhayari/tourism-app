@@ -6,32 +6,40 @@ import image from "../../assets/hotel.jpeg"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import StarRating from '../../components/rating';
 import {DollarCircleOutlined} from '@ant-design/icons'
+import { useState } from 'react';
+import HotelCard from './hotelCard';
 
 
-export default class HotelsComponent extends Component {
-    render() {
-        return (
-            <Container fluid>
+function HotelsComponent(props) {
+    const [counter,setCounter] = useState(0);
+    const [closeAlert,setCloseAlert] = useState(false);
+
+    const addItem=()=>{
+        setCloseAlert(true);
+        setCounter((preValue)=>{
+            return preValue +1;
+        })
+    }
+    const removeItem=()=>{
+        setCounter((preValue)=>{
+            return preValue -1;
+        })
+    }
+    return (
+        <div>
+             <Container fluid>
                 <Row  className="pt-2">
+                {closeAlert && <div className="alert alert-primary alert-dismissible alert-color" role="alert" id="liveAlert">
+                 {counter} hotel added ! Enjoy your stay !!
+                    <button type="button" onClick={()=>{setCloseAlert(false)}} className="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div> }
                     {Array.from({ length: 8 }).map((_, idx) => (
-                    <Col md={3}sm className="hotel-card" key={idx}>
-                        <Card>
-                            <Card.Img variant="top" src={image}/>
-                            <Card.Body>
-                                <Card.Title bsPrefix={'hotel-name'}>the hermitage of akchour<StarRating className="rating-comp"/></Card.Title>
-                                <Card.Text bsPrefix={'hotel-description'}>The hotel has a roof terrace. In addition, Casa Sabila has a free breakfast, providing a pleasant place to rest after a busy day.</Card.Text>
-                                <div className="hotel-price-range justify-content-start text-muted">
-                                    <DollarCircleOutlined style={{ fontSize: '12px', color: '#545454' }}/>
-                                    <span>523 MAD</span>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                        <button type="button" className="add-btn btn btn-rounded">Add</button>
-                    </Col>
+                        <HotelCard key={idx} idx={idx} addItem={addItem} removeItem={removeItem} counter ={counter}/>
                     ))}
                 </Row>
             </Container>
-
-        )
-    }
+        </div>
+    )
 }
+
+export default HotelsComponent

@@ -25,35 +25,44 @@
   padding-top: 0;
   position: relative;
   color: gray;
-  font-size: 14px;
-  font-weight: normal;
+  font-size: 15px;
+  font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 20px;
+}
+.nav-link:focus{
+  color: var(--darkGreen) !important
+
 }
 
 .link:hover {
   cursor: pointer;
   color: var(--darkGreen);
-  text-decoration: underline;
 }
+
 .place-category {
+  display: -webkit-box;
   text-align: left;
-  padding-left: 11px;
-  display: inline-flex;
-  margin-bottom: 0;
-  color: maroon;
+  margin-bottom: 10px;
+    color: maroon;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
 }
+.rating{
+  display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-content: flex-end;
 
-.rating-comp {
-  margin-left: -11px;
+}
+
+/* .rating-comp {
   padding-top: 0;
   padding-right: 0;
   padding-left: 0;
   padding-bottom: 0;
-}
+} */
 .place-name {
   text-align: left;
   margin-top: 0;
@@ -78,8 +87,7 @@
 .place-card .see-more-btn {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  height: 35px;
-  width: 125px;
+  min-width: 80px;
   background-color: #e1dede;
   border-radius: 10px;
   font-size: 13px;
@@ -94,20 +102,18 @@
 .place-card .add-to-card_btn {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  height: 35px;
-  width: 125px;
+  min-width: 80px;
   background-color: #38b4aa;
   border-radius: 10px;
   font-size: 13px;
   align-items: center;
   text-transform: capitalize;
   color: white;
-
 }
 .bor {
   border: solid 5px #28857d !important;
 }
-.place-card .counter {
+ .counter {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   height: 50px;

@@ -11,7 +11,6 @@ import Modal from '../pages/customTour/Toasts/ToastPlaces.jsx';
 
 
 
-
 function Places({card_mode}) {
     const [showToast,setShowToast]= useState(false);
     const [counter,setCounter]=useState(0);
@@ -42,9 +41,9 @@ function Places({card_mode}) {
          <Container>
             <Row className="categories-menu">
                 <Col>
-                    <Nav className="justify-content-center" defaultActiveKey="/all">
-                        <Nav.Item  bsPrefix={"link"} >
-                            <Nav.Link href="/all">All</Nav.Link>
+                    <Nav className="justify-content-center" activeKey="/all">
+                        <Nav.Item  bsPrefix={"link"}>
+                            <Nav.Link eventKey="/all">All</Nav.Link>
                         </Nav.Item >
                         <Nav.Item  bsPrefix={"link"} >
                             <Nav.Link eventKey="natural">Natural</Nav.Link>
@@ -60,7 +59,7 @@ function Places({card_mode}) {
             </Row> 
     
             {closeAlert && <div class="alert alert-primary alert-dismissible alert-color" role="alert" id="liveAlert">
-            <strong>Nice!</strong> {counter} places have been added.
+            <strong>Amazing!  </strong> you are about to discover  {counter} places in chefchaouen .
             <button type="button" onClick={()=>{setCloseAlert(false)}} class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
           </div> }
           {showToast && <Modal showModal={showModal}/>}

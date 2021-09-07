@@ -4,7 +4,7 @@ import header from '../../../assets/headImage.png'
 import  './ToastPlaces.css';
 import medinaaa from '../../../assets/medinaaa.jpg'
 import CHEFCHAOUEN_KASBAH from '../../../assets/CHEFCHAOUEN_KASBAH.jpg'
-import restau from '../../../assets/restau.jpg'
+import StarRating from '../../../components/rating';
 
 const Modal = ({showModal}) => {
   const table=[medinaaa,CHEFCHAOUEN_KASBAH];
@@ -38,6 +38,7 @@ const Modal = ({showModal}) => {
                       <img  src={header} className="header-mod card-img-top img-fluid" alt="..."/>
                       <div class="card-body">
                         <h5 class="card-title">Talassemtane National Park</h5>
+                        <div className="rating"><StarRating /></div>
                         
                         <p class="card-text"><small class="text-muted">25 km to Chefchaouen</small>  <button type="button" class=" button--pan">Show on map</button></p>
                           <br />
