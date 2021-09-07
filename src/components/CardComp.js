@@ -22,7 +22,6 @@ function CardComp({card_mode,addItem,removeItem,counter,idx}) {
             }else{
                removeItem();
             }
-            //console.log(counter)
         }
            
             
@@ -35,13 +34,13 @@ function CardComp({card_mode,addItem,removeItem,counter,idx}) {
        
              <Card.Img variant="top" src={placesImage}/>
              <Card.Body>
+                <div className="rating"><StarRating key={idx} /></div>
                  <Card.Subtitle bsPrefix={"place-category"}>
                      <i class="fas fa-university"></i> Culture 
-                     <div className="rating-comp"><StarRating key={idx}/></div>
                  </Card.Subtitle>
                  <Card.Title bsPrefix={'place-name'}>Medina</Card.Title>
                  <Card.Text bsPrefix={'place-description'}>If you are looking for unique souvenirs from Morocco, you will certainly find them in Chefchaouen's medina, where the streets are ....</Card.Text>
-                 <div class="container-sm btn-group" role="group" aria-label="Basic example">
+                 {/* <div class="container-sm btn-group" role="group" aria-label="Basic example"> */}
                 <button type="button" className={`${choose_mode?"see-more-btn btn btn-light":"see-more-choose-mode see-more-btn btn btn-light"}`}>See more</button>
          
                 {choose_mode &&<button type="button" id="liveAlertBtn" onClick={handleClickButton} 
@@ -50,7 +49,7 @@ function CardComp({card_mode,addItem,removeItem,counter,idx}) {
         }
 
              
-       </div>
+       {/* </div> */}
              </Card.Body>
 
          </Card>

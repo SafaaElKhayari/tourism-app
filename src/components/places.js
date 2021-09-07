@@ -7,9 +7,8 @@ import { useState } from 'react';
 import CardComp from './CardComp';
 
 
-
 function Places({card_mode}) {
-    const [counter,setCounter]=useState(0);
+    const [counter,setCounter] = useState(0);
     const [closeAlert,setCloseAlert] = useState(false);
 
     const addItem=()=>{
@@ -31,9 +30,9 @@ function Places({card_mode}) {
         <Container>
             <Row className="categories-menu">
                 <Col>
-                    <Nav className="justify-content-center" defaultActiveKey="/all">
-                        <Nav.Item  bsPrefix={"link"} >
-                            <Nav.Link href="/all">All</Nav.Link>
+                    <Nav className="justify-content-center" activeKey="/all">
+                        <Nav.Item  bsPrefix={"link"}>
+                            <Nav.Link eventKey="/all">All</Nav.Link>
                         </Nav.Item >
                         <Nav.Item  bsPrefix={"link"} >
                             <Nav.Link eventKey="natural">Natural</Nav.Link>
