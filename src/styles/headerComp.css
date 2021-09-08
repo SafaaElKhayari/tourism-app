@@ -22,7 +22,7 @@
 
 .head-title {
   display: flex;
-  word-wrap:break-word;
+  word-wrap: break-word;
   max-width: 900px;
   font-family: "Playfair Display", serif;
   font-size: 60px;
@@ -30,7 +30,6 @@
   font-weight: 700;
   padding-top: 150px;
   padding-bottom: 30px;
-
 }
 
 .head-container .discover-btn {

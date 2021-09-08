@@ -3,6 +3,7 @@ import { useState } from 'react';
 import header from '../../../assets/headImage.png'
 import  './ToastPlaces.css';
 import medinaaa from '../../../assets/medinaaa.jpg'
+
 import CHEFCHAOUEN_KASBAH from '../../../assets/CHEFCHAOUEN_KASBAH.jpg'
 import StarRating from '../../../components/rating';
 

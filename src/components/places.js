@@ -1,15 +1,11 @@
 import React from 'react'
-import { Container, Nav, Row,Col,Card} from 'react-bootstrap'
+import { Container, Nav, Row,Col} from 'react-bootstrap'
 import "mdbreact";
 import "../styles/places.css"
 import "./rating";
 import { useState } from 'react';
 import CardComp from './CardComp';
 import Modal from '../pages/customTour/Toasts/ToastPlaces.jsx';
-
-
-
-
 
 function Places({card_mode}) {
     const [showToast,setShowToast]= useState(false);
@@ -59,7 +55,7 @@ function Places({card_mode}) {
             </Row> 
     
             {closeAlert && <div class="alert alert-primary alert-dismissible alert-color" role="alert" id="liveAlert">
-            <strong>Amazing!  </strong> you are about to discover  {counter} places in chefchaouen .
+            <strong>Amazing!  </strong>you are about to discover  {counter} places in chefchaouen .
             <button type="button" onClick={()=>{setCloseAlert(false)}} class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
           </div> }
           {showToast && <Modal showModal={showModal}/>}

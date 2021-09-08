@@ -1,9 +1,15 @@
 .container_trips {
-  margin: 50px 20px 50px;
+  margin: 50px 10px 5 0px;
+}
+.padding-cards {
+  margin: 10px 0px 0px;
 }
 .date_trips {
   font-weight: 700;
   color: #0a4843;
+}
+.card-text {
+  padding-top: 0px !important;
 }
 .btn_trips {
   position: absolute;
@@ -17,8 +23,9 @@
 .info_btn {
   position: absolute;
   bottom: 10px;
-  right: 10px;
-  width: 70px;
+  right: 60px;
+  width: 100px;
+  font-weight: 500;
   cursor: pointer;
   height: 40px;
   text-align: center;
@@ -26,27 +33,4 @@
   border: none;
   background-size: 300% 100%;
   border-radius: 50px;
-  background-image: linear-gradient(
-    to right,
-    #28857d,
-    #3cba92,
-    #30dd8a,
-    #2bb673
-  );
-  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
-  moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-.info_btn:hover {
-  background-position: 100% 0;
-  moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-.info_btn:focus {
-  outline: none;
 }
