@@ -7,6 +7,7 @@ import header1 from '../../assets/header1.jpg'
 
 import "bootstrap-css-only/css/bootstrap.min.css";
 import { MDBContainer } from 'mdbreact';
+import { Link } from 'react-router-dom';
 
 function Header_home() {
     return (
@@ -15,18 +16,19 @@ function Header_home() {
                 <MDBContainer className="container_header" breakpoint="xxl">
                     <h1 className='header_title'>Don’t believe <br/>What they say !<br/> Explore & see </h1>
                     <h3 className='header_text'>For those of you like me who have the flexibility to choose a vacation, you can choose the tour and discover the city of Chefchaouen </h3>
-                    <button type="button" className="create-tour btn">CREATE YOUR TOUR</button>
+                    <Link to="/CustomTour"> <button type="button" className="create-tour btn">CREATE YOUR TOUR</button></Link>
                     <div className="d-inline-flex p-2">
                     <div className="underline_button"> </div>
                      <span className="or"> or</span>
                     <div className="underline_button2"></div>
                     </div>
                     
-                    <button type="button" className="discover_tour btn btn-light">DISCOVER OUR TOURS</button>
+                    <Link to="/DiscoverTours"><button type="button" className="discover_tour btn btn-light"> DISCOVER OUR TOURS</button> </Link>
     
                 </MDBContainer>
                 
         </div>
+
 
            
     )

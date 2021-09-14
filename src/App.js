@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import DestinationsPage from './pages/destination/destination'
 import Home from './pages/home/home'
 import Trips from './pages/trips/Trips';
+import DiscoverTours from './pages/DiscoverTours/DiscoverTours';
 //const CustomTour=lazy(()=>import('./pages/customTour/customTour'))
 function App() {
   
@@ -22,6 +23,8 @@ function App() {
         <Route path="/CustomTour" render={()=> <Suspense  fallback={<div> Chargement...</div>}   >
         <CustomTour/>
       </Suspense>} />
+      <Route path="/DiscoverTours" component={DiscoverTours} />
+      
         
     </Switch>
     {/* <Suspense  fallback={<div>Chargement...</div>}   >
