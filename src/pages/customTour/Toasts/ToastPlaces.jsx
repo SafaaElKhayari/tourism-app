@@ -59,7 +59,7 @@ const Modal = ({showModal}) => {
                         </div>
                         <div className="carousel-inner">
                           <div className="carousel-item active"  className="img-caro" >
-                            <img  src={table[value]} className="img-toast-caro d-block w-100" alt=""/>  
+                            <img src={table[value]} className=" d-block w-100 img-toast-caro" alt=""/>  
                           </div>
                         </div>
                         

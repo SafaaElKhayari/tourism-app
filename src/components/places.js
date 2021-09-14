@@ -6,6 +6,7 @@ import "./rating";
 import { useState } from 'react';
 import CardComp from './CardComp';
 import Modal from '../pages/customTour/Toasts/ToastPlaces.jsx';
+import Scrollspy from 'react-scrollspy'
 
 function Places({card_mode}) {
     const [showToast,setShowToast]= useState(false);
@@ -32,10 +33,9 @@ function Places({card_mode}) {
 
 
     return (
-       <div className="py-4" >
-
-         <Container>
-            <Row className="categories-menu">
+       <div className="py-4" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="100">
+         <Container id="scrollspyHeading1"  > 
+            <Row className="categories-menu" >
                 <Col>
                     <Nav className="justify-content-center" activeKey="/all">
                         <Nav.Item  bsPrefix={"link"}>

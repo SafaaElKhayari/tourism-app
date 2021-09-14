@@ -17,7 +17,7 @@ function TripsComponent() {
     return (
     <div className="py-4" >
         {showToast && <Modal  showModal={showModal}/>}
-     <Container>
+     <Container id="scrollspyHeading1">
       
         <MDBRow className=' container_trips row-cols-1 row-cols-md-2 g-4 mt-3'>
        

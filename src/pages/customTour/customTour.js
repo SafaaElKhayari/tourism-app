@@ -3,6 +3,8 @@ import Footer from '../../components/navigation/footer'
 import NavBar from '../home/NavBar'
 import StepperComponent from './stepper'
 import './customTour.css'
+import headerTours from "../../assets/header-tours.jpeg"
+import HeadSection from '../../components/headerComp'
 import RestaurantsComponent from './restaurants'
 import AddRestaurant from './steps/AddRestaurant'
 import ChooseRestaurant from './steps/ChooseRestaurant'

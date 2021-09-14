@@ -3,6 +3,9 @@
   top: 100px !important;
   padding: 15px !important;
 }
+.card-body {
+  text-align: center;
+}
 
 .fade:not(.show) {
   opacity: 1 !important;
@@ -50,6 +53,10 @@
   width: 900px;
 }
 .img-toast-caro {
-  height: 300px;
+  height: 300px !important;
   width: 900px !important;
+}
+.img-caro {
+  width: 900px !important;
+  height: 300px;
 }
