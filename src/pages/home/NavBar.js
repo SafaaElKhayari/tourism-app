@@ -66,7 +66,7 @@ function NavBar({scro=true}) {
         
                         <div className="container-sm" className="sign">
                         <button onClick={handleToggleClick} className='toggle-btn'><FaBars /></button>
-                            <button type="button" className="btn btn-light">sign in </button>
+                            <Link to="/Profile"> <button type="button" className="btn btn-light">sign in </button></Link>
                             <button type="button" className="btn btn-dark">sign up</button>
                         </div>
                     </ul>

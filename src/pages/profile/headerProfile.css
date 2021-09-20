@@ -1,0 +1,124 @@
+/* header*/
+
+.card-profile {
+  padding-top: 90px;
+  height: 250px;
+  border-radius: 8%;
+
+  margin: 10px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 420px;
+  margin-bottom: 30px;
+}
+.img-profile {
+  height: 250px;
+  border-radius: 10px;
+}
+.name-profile {
+  color: #0a4843;
+  padding-top: 10px;
+  padding-left: 300px;
+}
+.btn-profile {
+  background-color: #eee;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 0px;
+  box-shadow: 0px;
+  width: 100px;
+  position: absolute;
+  right: 50px;
+  top: 350px;
+}
+.btn-profile:focus {
+  border: solid 1px #0a4843;
+}
+.email-profile {
+  font-size: 16pt;
+  color: #0a4843;
+  padding-top: 5px;
+  padding-left: 330px;
+}
+.name-profile span {
+  font-size: 16pt;
+}
+.avatar-profile {
+  position: absolute;
+  top: 190px;
+  left: 150px;
+  overflow: visible !important;
+  width: 250px;
+  padding: 10px;
+  height: 250px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+/* tabs*/
+.tabsContainer {
+  border-radius: 20px !important;
+}
+.main-tabs-container {
+  width: 1100px;
+}
+
+.MuiTouchRipple-root {
+  color: #0a4843 !important;
+}
+
+/*History Card*/
+.history-profile {
+  position: relative;
+  border-radius: 10px;
+  border: none;
+  box-shadow: none;
+  margin: 10px 135px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  padding: 10px 50px;
+  padding-bottom: 30px;
+}
+
+.img-sm {
+  padding-left: 0px !important;
+}
+
+.card-prof {
+  padding: 0px !important;
+}
+.card-prof h5 {
+  font-size: 12pt;
+  line-height: 1.6;
+}
+.title-history {
+  padding-top: 5px;
+  color: black;
+  font-size: 16pt;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px;
+}
+.btn-unfollow {
+  background-color: #eee;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  box-shadow: 0px;
+  width: 100px;
+}
+.btn-follow {
+  background-color: #4267b2;
+  color: #eee;
+  border: none;
+  border-radius: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  box-shadow: 0px;
+  width: 100px;
+}

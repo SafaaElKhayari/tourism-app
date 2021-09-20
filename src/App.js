@@ -11,6 +11,7 @@ import Home from './pages/home/home'
 import Trips from './pages/trips/Trips';
 import DiscoverTours from './pages/DiscoverTours/DiscoverTours';
 //const CustomTour=lazy(()=>import('./pages/customTour/customTour'))
+import Profile from './pages/profile/Profile';
 function App() {
   
       
@@ -24,6 +25,7 @@ function App() {
         <CustomTour/>
       </Suspense>} />
       <Route path="/DiscoverTours" component={DiscoverTours} />
+      <Route path="/Profile" component={Profile} />
       
         
     </Switch>
