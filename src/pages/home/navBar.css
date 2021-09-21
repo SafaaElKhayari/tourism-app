@@ -10,6 +10,10 @@
   top: 26px;
   right: 25px;
 }
+.sign-btn {
+  border-radius: 5px;
+  box-shadow: none;
+}
 
 .nav-header {
   padding-left: 150px;

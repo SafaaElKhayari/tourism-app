@@ -7,7 +7,7 @@ const ToastEvent = ({showModal}) => {
 
     return (
         <div>
-        <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal modalTost fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable" >
             <div className="modal-content">
                <div className="modal-header">
