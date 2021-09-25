@@ -3,6 +3,7 @@ import logo from '../../assets/logos/logo2.svg'
 import './navBar.css'
 import { useState,useRef} from 'react';
 import { FaBars } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function NavBar({scro=true}) {
     const underline = useRef(null);
@@ -31,10 +32,8 @@ function NavBar({scro=true}) {
         line.style.left=`${under_left}px`;
         line.style.top=`${under_top}px`;
         line.style.width=`${under_width}px`;
-        console.log(left)
-        console.log(width)
-        console.log(under_left)
-        console.log(under_width) 
+        console.log("clicked")
+     
     }
 
     const handleToggleClick =(e)=>{
@@ -47,27 +46,27 @@ function NavBar({scro=true}) {
          : 'Nav navbar   navbar-expand-lg navbar-light  fixed-top'
           }`}>
             <div className="container-fluid">
-                <img className="navbar-logo" src={logo} alt="logo" />
-
+            <Link to="/"> <img className="navbar-logo" src={logo} alt="logo" /> </Link>
+                
                 <div className="nav-header navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
-                            <a className="nav-link"  aria-current="close-side-barage" href="#!" onClick={handleClick}>Home</a>
+                         <Link className="nav-link"  aria-current="close-side-barage" onClick={handleClick} to="/">Home </Link>
                             <div ref={underline} className="underline"></div>
                         </li>
                         <li  className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
-                            <a className="nav-link "  href="#!" onClick={handleClick}>Destinations</a>
+                        <Link to="/Destinations" className="nav-link "  onClick={handleClick}>Destinations </Link>
                         </li>
                         <li className={`${showMenu?"sidebar hov ":"close-side-bar"}`} className="nav-item ">
-                            <a className="nav-link" href="#!" onClick={handleClick}>Trips</a>
+                        <Link to="/Trips" className="nav-link"  onClick={handleClick}>Trips</Link>   
                         </li>
                         <li className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
-                            <a className="nav-link" href="#!" tabIndex="-1" aria-disabled="true" onClick={handleClick}>Tours</a>
+                        <Link to="/CustomTour" className="nav-link"  tabIndex="-1" aria-disabled="true" onClick={handleClick}>Tours</Link>  
                         </li>
         
                         <div className="container-sm" className="sign">
                         <button onClick={handleToggleClick} className='toggle-btn'><FaBars /></button>
-                            <button type="button" className="btn btn-light">sign in </button>
+                            <Link to="/Profile"> <button type="button" className="btn sign-btn">sign in </button></Link>
                             <button type="button" className="btn btn-dark">sign up</button>
                         </div>
                     </ul>

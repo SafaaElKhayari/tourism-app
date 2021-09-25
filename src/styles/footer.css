@@ -9,6 +9,7 @@
   --darkerGreen: #0a4843;
 }
 .page-footer {
+  margin-bottom: 0px !important;
   background-color: var(--black);
   font-family: var(--font-family);
 }
@@ -22,7 +23,6 @@
 }
 .page-footer .title {
   font-size: 18px;
-  
 }
 .logo {
   height: 170px;

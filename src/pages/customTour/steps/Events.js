@@ -4,9 +4,11 @@ import "bootstrap-css-only/css/bootstrap.min.css"
 import image from "../../../assets/event.jpg"
 import EventCard from '../eventCard'
 import { useState } from 'react';
+import Modal from '../Toasts/ToastEvent.jsx';
 
 
 function AddEvents(props) {
+    const [showToast,setShowToast]= useState(false);
     const [counter,setCounter] = useState(0);
     const [closeAlert,setCloseAlert] = useState(false);
 
@@ -20,6 +22,9 @@ function AddEvents(props) {
             return preValue -1;
         })
     }
+    const showModal=()=>{
+        setShowToast(!showToast);
+    }
     return (
         <div>
             <h3 className="question">{props.title}</h3>
@@ -30,6 +35,7 @@ function AddEvents(props) {
             <button type="button" onClick={()=>{setCloseAlert(false)}} className="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
           </div> }
             <Container fluid className="events">
+                {showToast && <Modal showModal={showModal}/>}
                 <Row xs={1} md={3} className="g-5 event-cards">
                     {Array.from({ length: 6}).map((_, idx) => (
                     <Col sm className="event-cards__item ">
@@ -43,6 +49,8 @@ function AddEvents(props) {
                             counter={counter}
                             key={idx}
                             idx={idx}
+                            showModal={showModal}
+                            
                             />
                     </Col>
                         )

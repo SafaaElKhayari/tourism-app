@@ -31,9 +31,11 @@
   color: #0a4843;
 }
 .header_text {
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 14pt;
   line-height: 28px;
   color: #000000;
@@ -41,13 +43,14 @@
 }
 .create-tour {
   background-color: #0a4843 !important;
-
-  width: 200px;
+  font-size: 12pt;
+  width: 220px;
   color: white !important;
 }
 
 .discover_tour {
-  width: 200px;
+  font-size: 12pt;
+  width: 220px;
   color: #0a4843 !important;
   justify-self: center;
 }

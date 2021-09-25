@@ -13,24 +13,26 @@
 /* Styling Destinations Header */
 .head-container {
   margin-top: 100px;
+  margin-bottom: 0px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
   height: 50vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 0.9;
 }
 
 .head-title {
   display: flex;
-  word-wrap:break-word;
+  word-wrap: break-word;
   max-width: 900px;
   font-family: "Playfair Display", serif;
   font-size: 60px;
   font-style: normal;
   font-weight: 700;
-  padding-top: 150px;
-  padding-bottom: 30px;
-
+  padding-top: 120px;
+  padding-bottom: 40px;
+  text-shadow: 3px 3px #212121;
 }
 
 .head-container .discover-btn {
@@ -41,11 +43,18 @@
   background-color: var(--darkGreen);
   color: white;
 }
-
+.discover-btn a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
 .discover-btn {
   width: 200px;
   cursor: pointer;
-  margin: 20px;
+
+  margin-bottom: -40px;
   height: 55px;
   text-align: center;
   border: none;

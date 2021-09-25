@@ -1,0 +1,125 @@
+.modal {
+  display: block !important;
+  top: 60px !important;
+  padding: 15px !important;
+}
+
+.fade:not(.show) {
+  opacity: 1 !important;
+}
+.header-mod {
+  height: 300px;
+}
+.header-caro {
+  height: 200px;
+  width: 95%;
+}
+.close {
+  color: black;
+}
+.close-trip-btn {
+  position: absolute;
+  top: 30px !important;
+  right: 20px;
+  z-index: 2;
+}
+.modal-content {
+  padding: 0px;
+  width: 900px !important;
+}
+.container-pics {
+  display: grid;
+}
+.card-text {
+  padding-top: 20px;
+}
+.card-text button {
+  padding: 5px;
+  text-decoration: none;
+  color: #f0194d;
+  border: 2px solid #f0194d;
+}
+.card-text button:hover {
+  text-decoration: none;
+  background-color: #f0194d;
+  color: blanchedalmond;
+  border: 2px solid #f0194d;
+}
+.card-text small {
+  padding-right: 80px;
+  color: #28857d !important;
+}
+.containerToast {
+  width: 900px;
+}
+.img-toast-caro {
+  height: 300px;
+  width: 900px !important;
+}
+
+/* stepper */
+.img-stepper {
+  height: 200px;
+  float: left;
+  padding: 10px;
+}
+
+.desc-stepper {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+.title-stepper {
+  color: maroon;
+  font-size: 14pt;
+  font-style: normal;
+  font-weight: 400;
+}
+.discover-places-btn {
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 30px !important;
+  background-color: var(--darkGreen);
+  color: white;
+  width: 120px;
+  margin-top: 20px !important;
+  margin-left: 120px !important;
+}
+.discover-places-btn {
+  cursor: pointer;
+  margin: 5px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  background-image: linear-gradient(
+    to right,
+    #28857d,
+    #3cba92,
+    #30dd8a,
+    #2bb673
+  );
+  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.discover-places-btn:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.discover-places-btn:focus {
+  outline: none;
+}
+.MuiAccordion-rounded {
+  border: none !important;
+  border-radius: none !important;
+}
+.MuiPaper-elevation1 {
+  box-shadow: none !important;
+}

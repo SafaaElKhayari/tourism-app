@@ -1,125 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
 :root {
-    --font-family : 'Poppins', sans-serif;
-    --black : #212121;
-    --clearGray : #E1DEDE;
-    --darkGray :  #C5C2C2;
-    --darkGreen :#28857D;
+  --font-family: "Poppins", sans-serif;
+  --black: #212121;
+  --clearGray: #e1dede;
+  --darkGray: #c5c2c2;
+  --darkGreen: #28857d;
 }
 
-.stepper-container{
-    min-height: 90vh;
-    font-family: var(--font-family);
+.stepper-container {
+  min-height: 90vh;
+  margin-top: 80px;
+  font-family: var(--font-family);
 }
 
-.stepper-content{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding-top: 150px;
-    padding-left: 55px;
-    padding-right: 55px;
-    padding-bottom: 40px;
+.stepper-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 60px;
+  padding-left: 55px;
+  padding-right: 55px;
+  padding-bottom: 40px;
 }
-.stepper-inner{
-    margin: auto;
-    background: white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-    padding:30px 55px 45px 55px;
-    border-radius: 20px;
-    transition: all .3s;
+.stepper-inner {
+  margin: auto;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  padding: 30px 55px 45px 55px;
+  border-radius: 20px;
+  transition: all 0.3s;
 }
 
-.tour-type-option{
-    cursor: pointer;
-    max-width: 250px;
-    max-height: 400px;
-    /* padding-left: 60px;
+.tour-type-option {
+  cursor: pointer;
+  max-width: 250px;
+  max-height: 400px;
+  /* padding-left: 60px;
     padding-right: 60px; */
-    padding-top: 30px;
-    border: 1px solid #615F5F;
-    box-sizing: border-box;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+  padding-top: 30px;
+  border: 1px solid #615f5f;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
-.tour-type-option:hover{
-    box-shadow: 0 0 11px cornflowerblue; 
-  }
-
-
-.tour-type-option .option-title{
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left:20px;
-    margin-right: 20px;
-    font-weight: 400;
-    font-size: 18px;
-    letter-spacing: 0.055em;
-    /* color: black; */
-    line-height: 29px;
-}
-.tour-type-option .option-description{
-    font-weight: 400;
-    line-height: 20.44px;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.055em;
-    text-align: center;
-    color: #615F5F;
+.tour-type-option:hover {
+  box-shadow: 0 0 11px cornflowerblue;
 }
 
-.stepper-inner .question{
-    padding-top: 10px;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 35px;
-    letter-spacing: 0.055em;
-    color: #615F5F;
+.tour-type-option .option-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.055em;
+  /* color: black; */
+  line-height: 29px;
+}
+.tour-type-option .option-description {
+  font-weight: 400;
+  line-height: 20.44px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.055em;
+  text-align: center;
+  color: #615f5f;
 }
 
-.stepper-inner .subquestion{
+.stepper-inner .question {
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 35px;
+  letter-spacing: 0.055em;
+  color: #615f5f;
+}
+
+.stepper-inner .subquestion {
   padding-bottom: 20px;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 29px;
-    letter-spacing: 0.055em;
-    color: #615F5F;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 29px;
+  letter-spacing: 0.055em;
+  color: #615f5f;
 }
 
-.stepper-inner .btn-container{
-    padding-top: 40px;
+.stepper-inner .btn-container {
+  padding-top: 40px;
 }
 
 .stepper-inner .btn-container .next-btn,
-.stepper-inner .btn-container .prev-btn{
-    text-transform: capitalize;
-    font-size: 15px;
-    line-height: 19px;
-    font-weight: 400;
-    letter-spacing: 0.055em;
+.stepper-inner .btn-container .prev-btn {
+  text-transform: capitalize;
+  font-size: 15px;
+  line-height: 19px;
+  font-weight: 400;
+  letter-spacing: 0.055em;
 }
 
-.loading_container .loading_text{
-    padding-top: 30px;
-    font-family: "Playfair Display", serif;
-    font-size: 18px;
-    text-align: center;
-    font-weight: 200;
-    line-height: 25px;
-    color: #0A4843;
-
+.loading_container .loading_text {
+  padding-top: 30px;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 200;
+  line-height: 25px;
+  color: #0a4843;
 }
 
 /* Styling EVENTS component */
 
-.events{
+.events {
   display: flex;
   flex-grow: 1;
   justify-content: center;
@@ -194,7 +192,6 @@
   transition: all 0.25s ease-in;
 }
 
-
 .event-card-text {
   font-family: var(--font-family);
   font-size: 14px;
@@ -217,7 +214,6 @@
   border: none;
 }
 
-
 .event-card-description {
   font-size: 14px;
   letter-spacing: 0.055em;
@@ -229,16 +225,15 @@
   padding-right: 30px;
   padding-top: 30px;
 }
-.date{
-display: flex;
-justify-content: center;
-
+.date {
+  display: flex;
+  justify-content: center;
 }
-.date i{
-padding-right: 11px;
+.date i {
+  padding-right: 11px;
 }
-.date label{
-font-size: 14px;
+.date label {
+  font-size: 14px;
 }
 
 .event-card-waves {
@@ -249,7 +244,7 @@ font-size: 14px;
   height: 143px;
   bottom: 0;
   left: 0;
-  background: url('../../assets/event.jpg');
+  background: url("../../assets/event.jpg");
   background-size: cover;
   transform-origin: center bottom;
   z-index: 11;
@@ -265,7 +260,7 @@ font-size: 14px;
   height: 143px;
   bottom: 0;
   left: 0;
-  background: url('../../assets/event.jpg');
+  background: url("../../assets/event.jpg");
   background-size: cover;
   transform-origin: center bottom;
   z-index: 11;
@@ -282,7 +277,7 @@ font-size: 14px;
   height: 143px;
   top: 0;
   left: 0;
-  background: url('../../assets/event.jpg');
+  background: url("../../assets/event.jpg");
   background-size: cover;
   transform-origin: center bottom;
   z-index: 11;
@@ -310,79 +305,74 @@ font-size: 14px;
   }
 }
 
-
 /* Styling Hotels Component */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
-    --font-family : 'Poppins', sans-serif;
-    --black : #212121;
-    --clearGray : #E1DEDE;
-    --darkGray :  #C5C2C2;
-    --darkGreen :#28857D;
+  --font-family: "Poppins", sans-serif;
+  --black: #212121;
+  --clearGray: #e1dede;
+  --darkGray: #c5c2c2;
+  --darkGreen: #28857d;
 }
 
-*{
-    font-family: var(--font-family);
+* {
+  font-family: var(--font-family);
 }
-.hotel-card{
-    font-family: var(--font-family);
-    /* padding-top: 10px; */
-    padding-bottom: 20px;
-    margin-bottom: 0;
-    /* filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5)); */
-    border-radius: 0 !important;
-    /* width: auto;
-    height: auto; */}
-
-.rating-comp{
-    padding-top: 0;
-    padding-right: 0;
-    padding-left: 70px;
-    padding-bottom: 0;
-
-}
-.hotel-name{
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-align: left;
-    font-style: normal;
-    font-size: 16px;
-    font-weight: 600;
-    color: #444444;
-    display: flex;
-    justify-content: space-between;
-    text-transform: capitalize;
-
-}
-.hotel-description{
-    font-size: 12px;
-    color: #615F5F;
-    line-height: 15px;
-    font-weight: 300;
-    /* display: flex; */
-    text-align: left;
+.hotel-card {
+  font-family: var(--font-family);
+  /* padding-top: 10px; */
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  /* filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5)); */
+  border-radius: 0 !important;
+  /* width: auto;
+    height: auto; */
 }
 
-
-.hotel-price-range{
-    display: flex;
-    text-align: left;
-    padding-bottom: 10px;
-
+.rating-comp {
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 70px;
+  padding-bottom: 0;
 }
-.hotel-price-range span{
-        text-align: left;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 18px;
-        letter-spacing: 0em;
-        padding-left: 5px;
+.hotel-name {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: left;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 600;
+  color: #444444;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
 }
-    
+.hotel-description {
+  font-size: 12px;
+  color: #615f5f;
+  line-height: 15px;
+  font-weight: 300;
+  /* display: flex; */
+  text-align: left;
+}
 
-.hotel-card .add-to-card_btn{
+.hotel-price-range {
+  display: flex;
+  text-align: left;
+  padding-bottom: 10px;
+}
+.hotel-price-range span {
+  text-align: left;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 18px;
+  letter-spacing: 0em;
+  padding-left: 5px;
+}
+
+.hotel-card .add-to-card_btn {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   min-width: 80px;
@@ -392,87 +382,83 @@ font-size: 14px;
   align-items: center;
   text-transform: capitalize;
   color: white;
-
 }
- /* Styling Restaurants Component  */
- .restaurant-card{
-    font-family: var(--font-family);
-    /* padding-top: 10px; */
-    padding-bottom: 20px;
-    margin-bottom: 0;
-    /* filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5)); */
-    border-radius: 0 !important;
-    /* width: auto;
-    height: auto; */}
-
-.rating-comp{
-    padding-top: 0;
-    padding-right: 0;
-    padding-left: 70px;
-    padding-bottom: 0;
-
-}
-.restaurant-name{
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-align: left;
-    font-style: normal;
-    font-size: 16px;
-    font-weight: 600;
-    color: #444444;
-    display: flex;
-    justify-content: space-between;
-
-}
-.restaurant-description{
-    font-size: 12px;
-    color: #615F5F;
-    line-height: 15px;
-    font-weight: 300;
-    /* display: flex; */
-    text-align: left;
+/* Styling Restaurants Component  */
+.restaurant-card {
+  font-family: var(--font-family);
+  /* padding-top: 10px; */
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  /* filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5)); */
+  border-radius: 0 !important;
+  /* width: auto;
+    height: auto; */
 }
 
-
-.restaurant-price-range{
-    text-align: left;
-    padding-top: 15px;
-
+.rating-comp {
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 70px;
+  padding-bottom: 0;
 }
-.restaurant-price-range span{
-        text-align: left;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 18px;
-        letter-spacing: 0em;
-        padding-left: 5px;
+.restaurant-name {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: left;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 600;
+  color: #444444;
+  display: flex;
+  justify-content: space-between;
 }
-
- .see-more-btn{
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    min-width: 80px;
-    background-color: #e1dede;
-    border-radius: 10px;
-    font-size: 13px;
-    justify-content: center;
-    text-transform: capitalize;
-    color: #212121;
+.restaurant-description {
+  font-size: 12px;
+  color: #615f5f;
+  line-height: 15px;
+  font-weight: 300;
+  /* display: flex; */
+  text-align: left;
 }
 
-.restaurant-card .add-to-card_btn{
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    min-width: 80px;
-    background-color: #38b4aa;
-    border-radius: 10px;
-    font-size: 13px;
-    align-items: center;
-    text-transform: capitalize;
-    color: white;
+.restaurant-price-range {
+  text-align: left;
+  padding-top: 15px;
 }
-  
+.restaurant-price-range span {
+  text-align: left;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 18px;
+  letter-spacing: 0em;
+  padding-left: 5px;
+}
+
+.see-more-btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  min-width: 80px;
+  background-color: #e1dede;
+  border-radius: 10px;
+  font-size: 13px;
+  justify-content: center;
+  text-transform: capitalize;
+  color: #212121;
+}
+
+.restaurant-card .add-to-card_btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  min-width: 80px;
+  background-color: #38b4aa;
+  border-radius: 10px;
+  font-size: 13px;
+  align-items: center;
+  text-transform: capitalize;
+  color: white;
+}
+
 .restaurant-card .counter {
   font-family: "Roboto", sans-serif;
   font-weight: 400;

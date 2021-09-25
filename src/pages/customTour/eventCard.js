@@ -17,6 +17,10 @@ export default function EventCard(props) {
             }
         }
             
+    const handleClick = ()=>{
+          props.showModal();
+       }      
+         
   return (
  
     <div
@@ -34,7 +38,7 @@ export default function EventCard(props) {
       </div>
 
       <div className="event-card-info">
-       <button type="button" className="see-more-btn btn btn-light">See more</button>
+       <button onClick={handleClick} type="button" className="see-more-btn btn btn-light">See more</button>
        <button type="button" id="liveAlertBtn" onClick={handleClickButton} 
        className={`${remove? " add-to-card_btn  btn btn-danger":" add-to-card_btn btn btn-rounded"}`}>
         {`${remove? "Remove":"Add"}`} </button>
