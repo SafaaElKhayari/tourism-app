@@ -2,7 +2,6 @@ import React from 'react' ;
 import RegisterPage from './RegisterPage' ;
 import "bootstrap-css-only/css/bootstrap.min.css" ;
 
-
 function LoginForm(props) {
     const Emoji = props => (
         <span
