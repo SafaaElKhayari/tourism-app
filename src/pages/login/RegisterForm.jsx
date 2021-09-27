@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import LoginPage from './LoginPage'
+
 import "bootstrap-css-only/css/bootstrap.min.css";
 
 
@@ -17,7 +18,7 @@ function RegisterForm(props) {
       )
     return (
         <div className="col-lg-10 col-xl-7 mx-auto">
-            <h3 className="display-4 mb-4">Get Started <Emoji symbol="😎"/></h3>
+            <h3 className="display-4 mb-4 get-started">Get Started <Emoji symbol="😎"/></h3>
             <form>
                 <div className="form-group mb-4">
                     <input id="inputName" type="text" placeholder="Your Name" required="" autofocus="" className="form-control border-0 shadow-sm px-4" />
@@ -36,7 +37,7 @@ function RegisterForm(props) {
                 <button type="submit" className="sign-up btn btn-primary btn-block text-uppercase mb-2 shadow-sm">Sign up</button>
             </form>
                 <div className="text-center d-flex justify-content-between mt-4"><p className="question-signin">Already a member?
-                    <a className="link-primary" href="#!"> Login here</a></p></div>
+                    <Link to="/LoginPage" className="link-primary" href="#!"> Login here</Link></p></div>
         </div>
         
     )   

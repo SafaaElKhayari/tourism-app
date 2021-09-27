@@ -1,5 +1,6 @@
 import React from 'react' ; 
 import RegisterPage from './RegisterPage' ;
+import { Link } from 'react-router-dom';
 import "bootstrap-css-only/css/bootstrap.min.css" ;
 
 function LoginForm(props) {
@@ -31,7 +32,7 @@ function LoginForm(props) {
                             <button type="submit" className="sign-up btn btn-primary btn-block text-uppercase mb-2 shadow-sm">Log in</button>
                         </form>   
                         <div className="text-center d-flex justify-content-between mt-4">
-                            <p className="question-signin">Don't have an account?<a href="#!" onClick={props.handleSignIn} className="link-primary">  Sign up here</a></p>
+                            <p className="question-signin">Don't have an account?<Link to="/Registration" href="#!" onClick={props.handleSignIn} className="link-primary">  Sign up here</Link></p>
                         </div>
     </div>
                 
