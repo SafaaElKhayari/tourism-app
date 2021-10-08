@@ -3,11 +3,13 @@ import NavBar from '../home/NavBar'
 import LoginForm from './LoginForm'
 import RegisterPage from './RegisterPage'
 
-export default class LoginPage extends Component {
-    render() {
-        return (
-            <div>
-                <NavBar/>
+
+function LoginPage({setAuth, underline, setUnderlineFunction}) {
+    console.log(underline)
+    return (
+        <div>
+        
+                <NavBar underline={underline} setUnderlineFunction={setUnderlineFunction} />
                 <div className="maincontainer registration">
                     <div className="container-fluid">
                         <div className="row no-gutter">               
@@ -16,7 +18,7 @@ export default class LoginPage extends Component {
                                 <div className="login d-flex align-items-center py-5">
                                     <div className="container">
                                         <div className="row">
-                                            <LoginForm/>
+                                            <LoginForm setAuth={setAuth} />
                                         </div>
                                     </div>
 
@@ -29,5 +31,8 @@ export default class LoginPage extends Component {
             </div>
             
         )
-    }
-    }
+       
+}
+
+export default LoginPage
+

@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import logo from '../../assets/logos/logo2.svg'
 import './navBar.css'
 import { useState,useRef} from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { FaSignOutAlt } from "react-icons/fa";
 
 
 
-function NavBar({scro=true}) {
-    const underline = useRef(null);
+
+function NavBar({setAuth, scro=true ,isAuthenticated, profile=false,setUnderlineFunction,underline}) {
+    
+   
+    const underlineRef = useRef(null);
+   
     const [scroll,setScroll] = useState(scro);
-    const [showMenu,setShowMenu]=useState(false)
+    const [showMenu,setShowMenu]=useState(false);
     window.onscroll = function() {myFunction()};
-
+   // console.log(window.location.href)
+ 
+    
     function myFunction() {
         if(!scro){
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop >20) {
@@ -32,14 +38,11 @@ function NavBar({scro=true}) {
         const under_top=top+50;
         const under_left=left+12;
         const under_width=width-28;
-        const line=underline.current;
-        line.style.left=`${under_left}px`;
-        line.style.top=`${under_top}px`;
-        line.style.width=`${under_width}px`;
-      
-     
+        setUnderlineFunction(under_left,under_width,under_top);
+       
     }
     
+     //console.log(isAuthenticated)
     const handleWindow = () =>{
         window.scrollTo(0,0);
     }
@@ -47,7 +50,32 @@ function NavBar({scro=true}) {
     const handleToggleClick =(e)=>{
         setShowMenu(!showMenu);
     }
- 
+    //log out 
+    const logout = async e => {
+        e.preventDefault();
+        try {
+          localStorage.removeItem("token");
+          setAuth(false);
+        } catch (err) {
+          console.error(err.message);
+        }
+      };
+      const removeUnderline =()=>{
+        setUnderlineFunction(0,0,0);
+      }
+   useEffect(
+       ()=>{
+           const line=underlineRef.current;
+         if(underline.left){
+        
+        line.style.left=`${underline.left}px`;
+        line.style.top=`${underline.top}px`;
+        line.style.width=`${underline.width}px`;
+        console.log(underline)}
+    
+    }  ,[setUnderlineFunction,handleClick]
+       
+   )
     return (
         
         <nav className = {`${scroll ? 'Nav navbar   navbar-expand-lg navbar-light  fixed-top bg-light'
@@ -59,23 +87,34 @@ function NavBar({scro=true}) {
                 <div className="nav-header navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
-                         <Link className="nav-link"  aria-current="close-side-barage"  onClick={handleClick} to="/">Home </Link>
-                            <div ref={underline} className="underline"></div>
+                         <Link  tabindex="1" className="nav-link"  aria-current="close-side-barage"  onClick={handleClick} to="/">Home </Link>
+                            <div ref={underlineRef} className="underline"></div>
                         </li>
                         <li  className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
                         <Link to="/Destinations" className="nav-link "  onClick={handleClick}>Destinations </Link>
                         </li>
-                        <li className={`${showMenu?"sidebar hov ":"close-side-bar"}`} className="nav-item ">
-                        <Link to="/Trips" className="nav-link"  onClick={handleClick}>Trips</Link>   
+                        <li  className={`${showMenu?"sidebar hov ":"close-side-bar"}`} className="nav-item ">
+                        <Link to="/Trips" onClick={handleClick}  className="nav-link" >Trips</Link>   
                         </li>
                         <li className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
-                        <Link to="/CustomTour" className="nav-link"  tabIndex="-1" aria-disabled="true" onClick={handleClick}>Tours</Link>  
+                        <Link to="/LoginPage" className="nav-link"  tabIndex="-1" aria-disabled="true" onClick={handleClick}>Tours</Link>  
                         </li>
         
                         <div className="container-sm" className="sign">
                         <button onClick={handleToggleClick} className='toggle-btn'><FaBars /></button>
-                            <Link to="/LoginPage"> <button type="button" className="btn sign-btn">sign in </button></Link>
-                            <Link to="/Profile"> <button type="button" className="btn btn-dark">sign up</button> </Link>
+                        
+                           { isAuthenticated ?  
+                            
+                            <Link to="/Profile">
+                             {profile?<button onClick={e => logout(e)} type="button" className=" btn btn-rounded btn-primary profile-btn">
+                             <FaSignOutAlt/>  Sign Out</button>:
+                             <button  type="button" className=" btn btn-rounded btn-primary profile-btn">
+                            <i class="far fa-user pr-2"   aria-hidden="true"></i>Profile</button>}
+                            
+                            </Link>:
+                         <div><Link to="/LoginPageHome"> <button type="button" onClick={removeUnderline} className="btn sign-btn">sign in </button></Link>
+                            <Link to="/Registration"> <button type="button" className="btn btn-dark">sign up</button> </Link></div> }
+                            
                         </div>
                     </ul>
 
@@ -83,6 +122,6 @@ function NavBar({scro=true}) {
             </div>
         </nav>
     )
-}
 
+}
 export default NavBar

@@ -4,24 +4,43 @@ import avatarMix from '../../assets/avatar-mix.png'
 
 import Avatar from '@material-ui/core/Avatar';
 import {MdEdit  } from "react-icons/md";
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 
 
 
 function HeaderProfile() {
   const [showModal,setShowModal]=useState(false);
-  const [description,setDescription]=useState({name:"Safaa El Khayari",email:"safaa.dk.1999@gmail.com"});
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+
+  const getProfile = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/users/profile", {
+        method: "POST",
+        headers: { jwt_token: localStorage.token }
+      });
+
+      const parseData = await res.json();
+      setName(parseData.userName);
+      setEmail(parseData.email)
+      console.log(parseData)
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
 
     return (
         <div class="card  text-white card-profile">
           <img src={headerProfilePic} class="card-img img-profile" alt="..."/>
-        {/* <div class="card-img-overlay">
-        <h1 className="name-profile">Safaa El Khayari <br /> <span>safaa.dk.199@gmail.com</span>  </h1>
-        </div> */}
+       
           <Avatar alt="avatar" src={avatarMix} class="avatar-profile" />
           <div class="container-sm">
-                <h1 className="name-profile">{description.name}</h1>
-                 <h3 className="email-profile">{description.email}</h3> 
+                <h1 className="name-profile">{name}</h1>
+                 <h3 className="email-profile">{email}</h3> 
                  <button onClick={()=>{setShowModal(true)}} className="btn-profile" type="button" data-bs-toggle="modal" data-bs-target="#Modal"><MdEdit/> Edit</button>
                 
                 
@@ -37,15 +56,15 @@ function HeaderProfile() {
                         </div>
                         <div class="modal-body">
                         <input type="text" className="form-control" 
-                        value={description.name}
+                        value={name}
                         onChange={(e)=>{
-                          setDescription({...description,name:e.target.value});
+                          setName(e.target.value);
                         }}
                         />
                         <br />
-                        <input type="text" className="form-control" value= {description.email}
+                        <input type="text" className="form-control" value= {email}
                         onChange={(e)=>{
-                          setDescription({...description,email:e.target.value});
+                          setEmail(e.target.value);
                         }}
                         
                         />

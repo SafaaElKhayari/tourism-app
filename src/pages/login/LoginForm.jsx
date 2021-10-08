@@ -2,8 +2,18 @@ import React from 'react' ;
 import RegisterPage from './RegisterPage' ;
 import { Link } from 'react-router-dom';
 import "bootstrap-css-only/css/bootstrap.min.css" ;
+import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function LoginForm(props) {
+    const [email,setEmail]=useState("")
+    const [password,setPassword]=useState("")
+    const [error,setError]=useState("")
+    const notify = () =>  toast.success("Successful Login! Please Wait...")
+
+    
     const Emoji = props => (
         <span
           className="emoji"
@@ -14,26 +24,72 @@ function LoginForm(props) {
           {props.symbol}
         </span>
       )
+    const onSubmitForm = async e => {
+
+      e.preventDefault();
+      setError("")
+     try {
+      const body = {email,password};
+      const response = await fetch("http://localhost:5000/users/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" ,
+        'Accept': 'application/json'},
+        body: JSON.stringify(body)
+      }) 
+
+      const parseRes = await response.json();
+
+      if (parseRes.jwtToken) {
+
+        localStorage.setItem("token", parseRes.jwtToken);
+        const timer = setTimeout(() => {
+          
+         props.setAuth(true);
+        }, 2000);
+        
+        
+      } else {
+        setError(parseRes)
+        setPassword("")
+        props.setAuth(false);
+        
+      }
+      
+     
+     
+    
+     
+
+      /*  */
+    } catch (err) {
+      console.error(err.message);
+    }
+    };
+   
     return (
     <div className="col-lg-10 col-xl-7 mx-auto">
-    <h3 className="display-4 mb-4">Welcome back <Emoji symbol="😊"/></h3>
-
+   
+    <h4 className="display-4 mb-4 welcome-back">Welcome back <Emoji symbol="😊"/></h4>
+     <h5 className="login-Error">{error}</h5>
         {/* <p className="text-muted mb-4">Your personal account allows
          you to save your favorite destinations and rate your most liked 
          tours and trips</p> */}    
     
-    <form>
+    <form onSubmit={onSubmitForm} >
                  <div className="form-group mb-4">
-                                <input id="inputEmail" type="email" placeholder="Email" required="" autofocus="" className="form-control border-0 shadow-sm px-4" />
+                                <input value={email}
+                                onChange={e => setEmail(e.target.value)} id="email" name="email" type="email" placeholder="Email" required="" autofocus="" className="form-control border-0 shadow-sm px-4" />
                              </div>
                             <div className="form-group mb-4">
-                                <input id="inputPassword" type="password" placeholder="Password" required="" className="form-control border-0 shadow-sm px-4 text-primary" />
+                                <input  value={password}
+                                onChange={e => setPassword(e.target.value)} name="password" id="inputPassword" type="password" placeholder="Password" required="" className="form-control border-0 shadow-sm px-4 text-primary" />
                             </div>
-                            <button type="submit" className="sign-up btn btn-primary btn-block text-uppercase mb-2 shadow-sm">Log in</button>
+                            <button  onClick={notify} type="submit" className="sign-up btn btn-primary btn-block text-uppercase mb-2 shadow-sm">Log in</button>
                         </form>   
                         <div className="text-center d-flex justify-content-between mt-4">
                             <p className="question-signin">Don't have an account?<Link to="/Registration" href="#!" onClick={props.handleSignIn} className="link-primary">  Sign up here</Link></p>
                         </div>
+                      {error=="" && <ToastContainer />} 
     </div>
                 
     )

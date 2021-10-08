@@ -6,7 +6,7 @@ import "./rating";
 import { useState } from 'react';
 import CardComp from './CardComp';
 import Modal from '../pages/customTour/Toasts/ToastPlaces.jsx';
-import Scrollspy from 'react-scrollspy'
+
 
 function Places({card_mode}) {
     const [showToast,setShowToast]= useState(false);

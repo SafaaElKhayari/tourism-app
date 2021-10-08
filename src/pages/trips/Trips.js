@@ -7,10 +7,10 @@ import HeadSection from '../../components/headerComp'
 import tripsHeadImage from "../../assets/headImage2.jpg"
 import TripsComponent from './TripsComponent'
 
-function Trips() {
+function Trips({isAuthenticated,setUnderlineFunction,underline}) {
     return (
         <div>
-        <NavBar/>
+        <NavBar isAuthenticated={isAuthenticated} setUnderlineFunction={setUnderlineFunction} underline={underline}/>
         <HeadSection style={{backgroundImage: `url(${tripsHeadImage})`}} title="Exclusive trips chosen just for you" />
         <TripsComponent/>
         <Footer/>

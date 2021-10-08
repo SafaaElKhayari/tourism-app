@@ -7,10 +7,12 @@ import Footer from '../../components/navigation/footer'
 import UpcomingTrips from './upcomingTrips'
 import "../../styles/home.css"
 
-function home() {
+function home({setAuth ,isAuthenticated,setUnderlineFunction,underline}) {
+    
+
     return (
         <div>
-            <NavBar scro={false}/>
+            <NavBar scro={false} setAuth={setAuth} isAuthenticated={isAuthenticated} setUnderlineFunction={setUnderlineFunction} underline={underline}/>
             <Header_home/>
             <DescriptionSection/>
             <Popular_destination/>

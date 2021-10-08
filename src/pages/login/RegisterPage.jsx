@@ -9,7 +9,7 @@ import { Navbar } from 'react-bootstrap';
 import NavBar from '../home/NavBar';
 import Footer from '../../components/navigation/footer';
 
-function RegisterPage() {
+function RegisterPage({setAuth}) {
     return (
         <div>
             <NavBar/>
@@ -22,7 +22,7 @@ function RegisterPage() {
                         <div className="container">
                             <div className="row">
                                     {/* <p className="text-muted mb-4">Your personal account allows you to save your favorite destinations and rate your most liked tours and trips</p> */}
-                                <RegisterForm/>
+                                <RegisterForm setAuth={setAuth}/>
                             </div>
                         </div>
                     </div>
