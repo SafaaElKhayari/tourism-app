@@ -35,6 +35,10 @@
   color: #0a4843;
   font-weight: 800;
 }
+.nav-underline {
+  padding-bottom: 0px !important;
+  border-bottom: 3px solid #0a4843;
+}
 .nav-item a:focus {
   color: #0a4843 !important;
   font-weight: 800;
@@ -91,4 +95,7 @@
   color: #0a4843 !important;
   font-weight: 800;
   letter-spacing: 1px;
+}
+.logo-sign-out {
+  color: white !important;
 }

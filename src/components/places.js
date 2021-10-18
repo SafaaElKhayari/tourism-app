@@ -1,4 +1,4 @@
-import React,{ useState,useEffect, Suspense} from 'react';
+import React,{ useState,useEffect} from 'react';
 import { Container, Nav, Row,Col,Card} from 'react-bootstrap'
 import {FaCheckCircle, FaSpinner} from "react-icons/fa"
 import "mdbreact";
@@ -12,6 +12,7 @@ import CardComp from './CardComp';
 import Modal from '../pages/customTour/Toasts/ToastPlaces.jsx';
 import Scrollspy from 'react-scrollspy'
 import StarRating from './rating';
+
 
 
 export default function Places({card_mode},props) {
