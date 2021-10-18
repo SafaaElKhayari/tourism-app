@@ -1,9 +1,6 @@
-import React from 'react'
-import { Container,Row,Col} from 'react-bootstrap'
-import "bootstrap-css-only/css/bootstrap.min.css"
-import image from "../../../assets/event.jpg"
+import React,{ useState,useEffect }  from 'react'
+import { Container,Row,Col,Spinner} from 'react-bootstrap'
 import EventCard from '../eventCard'
-import { useState } from 'react';
 import Modal from '../Toasts/ToastEvent.jsx';
 
 
@@ -11,6 +8,9 @@ function AddEvents(props) {
     const [showToast,setShowToast]= useState(false);
     const [counter,setCounter] = useState(0);
     const [closeAlert,setCloseAlert] = useState(false);
+    const [events, setevents] = useState([]);
+    const [isLoading, setisLoading] = useState(true);
+
 
     const addItem=()=>{
         setCloseAlert(true);
@@ -25,6 +25,22 @@ function AddEvents(props) {
     const showModal=()=>{
         setShowToast(!showToast);
     }
+    const getEvents = async() =>{
+        try {
+            const response = await fetch ("http://localhost:5000/customTour/chooseAnEvent");
+            const jsonData = await response.json();
+            setevents(jsonData);
+            setisLoading(false);
+
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+    
+
+    useEffect(()=>{
+        getEvents();   
+    },[]);
     return (
         <div>
             <h3 className="question">{props.title}</h3>
@@ -36,27 +52,31 @@ function AddEvents(props) {
           </div> }
             <Container fluid className="events">
                 {showToast && <Modal showModal={showModal}/>}
-                <Row xs={1} md={3} className="g-5 event-cards">
-                    {Array.from({ length: 6}).map((_, idx) => (
-                    <Col sm className="event-cards__item ">
-                        <EventCard 
-                            imgUrl={image} 
-                            description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint
-                            deleniti dicta officia temporibus magni! Sint soluta excepturi
-                            suscipit alias ut!"
-                            addItem={addItem} 
-                            removeItem={removeItem}
-                            counter={counter}
-                            key={idx}
-                            idx={idx}
-                            showModal={showModal}
-                            
-                            />
-                    </Col>
-                        )
-                        )
-                        }
-                </Row>
+                {(isLoading && <div><h3 className="pt-5 loading-text">Fetching magic for you ... </h3>  <Spinner animation="border" variant="success" size="xxl" /></div>)}
+                {!isLoading &&
+                    <Row xs={1} md={3} className="g-5 event-cards">
+                        {events.map(event => (
+                        <Col sm className="event-cards__item ">
+                            <EventCard 
+                                event = {event}
+                                description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint
+                                deleniti dicta officia temporibus magni! Sint soluta excepturi
+                                suscipit alias ut!"
+                                addItem={addItem} 
+                                removeItem={removeItem}
+                                counter={counter}
+                                key={event.id}
+                                idx={event.id}
+                                showModal={showModal}
+                                
+                                />
+                        </Col>
+                            )
+                            )
+                            }
+                    </Row>
+                }
+                
             </Container>
         </div>
     )

@@ -1,0 +1,29 @@
+
+
+.trip-brief{
+    
+    font-size: 10px;
+    color: #615f5f;
+    line-height: 15px;
+    display: flex;
+    text-align: justify;
+  
+    --max-lines:3;
+    max-height:calc(15px * var(--max-lines));
+    overflow: hidden;
+} 
+
+.trip-name{
+    font-size: 18px;
+    padding-bottom:5px !important
+}
+
+.trip-date{
+    font-size: 18px;
+}
+
+.tripImg{
+    padding-top: 20px  !important;
+    width: 200px !important;
+    height: 270px;
+}

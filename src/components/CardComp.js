@@ -1,16 +1,15 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import {Col,Card} from 'react-bootstrap';
+import {FaCheckCircle} from "react-icons/fa"
 import "mdbreact";
-import placesImage from "../assets/places_img.jpeg"
+
 import "../styles/places.css"
 import "./rating";
 import StarRating from './rating';
-import { useState } from 'react';
-import {FaCheckCircle} from "react-icons/fa"
 
 
 
-function CardComp({card_mode,addItem,removeItem,counter,idx,showModal}) {
+function CardComp({card_mode,addItem,removeItem,counter,idx,key,showModal,place}) {
 
     const [remove,setRemove]= useState(false);
    
@@ -22,30 +21,51 @@ function CardComp({card_mode,addItem,removeItem,counter,idx,showModal}) {
                addItem();
             }else{
                removeItem();
-            }
-        }
-
+            }}
       
      const handleClick = ()=>{
         showModal();
      }      
-            
 
+
+     const handleCategory=(category)=>{
+         let categorySection; 
+         if(category === "Natural"){
+            categorySection= <Card.Subtitle bsPrefix={"place-category"} style={{ color: "#044026" }}>
+            <i className="fas fa-leaf mr-2"></i>{place.category}  
+        </Card.Subtitle>
+         }else if (category === "Cultural"){
+             categorySection = <Card.Subtitle bsPrefix={"place-category"} style={{ color: "#603511" }}>
+             <i className="fas fa-landmark mr-2"></i>{place.category}  
+         </Card.Subtitle>
+         }
+         else if (category === "Beach"){
+            categorySection = <Card.Subtitle bsPrefix={"place-category"} style={{ color: "#0349a3" }}>
+            <i className="fas fa-swimmer mr-2" ></i>{place.category}  
+        </Card.Subtitle>
+         }
+         return categorySection
+     };
+     
+     const buffer = place.image;
+     const b64 = new Buffer(buffer).toString('base64')
+     const mimeType = 'image/jpg'
+
+     
+            
     return (
         <Col className="place-card">
-      
           {remove && <FaCheckCircle style={iconStyles} className=" btn-rounded counter" /> }    
         <Card className={`${remove?"bor":null}`} >
-       
-             <Card.Img variant="top" src={placesImage}/>
-             <Card.Body>
-                <div className="rating"><StarRating key={idx} /></div>
-                 <Card.Subtitle bsPrefix={"place-category"}>
-                     <i className="fas fa-university"></i> Culture 
-                     
-                 </Card.Subtitle>
-                 <Card.Title bsPrefix={'place-name'}>Medina</Card.Title>
-                 <Card.Text bsPrefix={'place-description'}>If you are looking for unique souvenirs from Morocco, you will certainly find them in Chefchaouen's medina, where the streets are ....</Card.Text>
+        <Card.Img variant="top" style={{height: 240}} src={`data:${mimeType};base64,${b64}`}/>
+        {console.log(place.image)}
+
+        <Card.Body>
+                <div className="rating"><StarRating key={idx}/></div>
+                    {handleCategory(place.category)}
+                 <Card.Title bsPrefix={'place-name'}>{place.name} </Card.Title>
+                 
+                 <Card.Text bsPrefix={'place-description'}>{place.description}</Card.Text>
                  
                 <button onClick={handleClick} type="button" className={`${choose_mode?"see-more-btn btn btn-light":"see-more-choose-mode see-more-btn btn btn-light"}`} data-bs-toggle="modal" data-bs-target="#exampleModal">See more</button>
          
@@ -53,8 +73,6 @@ function CardComp({card_mode,addItem,removeItem,counter,idx,showModal}) {
                 className={`${remove? " add-to-card_btn  btn btn-danger":" add-to-card_btn btn btn-rounded"}`}>
                 {`${remove? "Remove":"Add"}`} </button>
         }
-
-            
              </Card.Body>
 
          </Card>
@@ -63,8 +81,7 @@ function CardComp({card_mode,addItem,removeItem,counter,idx,showModal}) {
          
         
      </Col>
-
     )
 }
 
-export default CardComp
+export default CardComp;

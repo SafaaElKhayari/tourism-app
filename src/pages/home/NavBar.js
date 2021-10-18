@@ -1,7 +1,6 @@
-import React from 'react'
+import React,{ useState,useRef} from 'react'
 import logo from '../../assets/logos/logo2.svg'
 import './navBar.css'
-import { useState,useRef} from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 

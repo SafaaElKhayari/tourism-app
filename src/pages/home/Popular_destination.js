@@ -1,14 +1,18 @@
+import React from 'react'
+import { FiMapPin } from "react-icons/fi";
+import {MDBContainer} from "mdb-react-ui-kit";
+
 import './popular_destinations.css'
 import akshur from '../../assets/logos/akshur.jpg'
 import medina2 from '../../assets/logos/medina2.jpg'
 import Stehat_beatch from '../../assets/logos/Stehat_beatch.jpg'
-import { FiMapPin } from "react-icons/fi";
-import React from 'react';
-import {MDBContainer} from "mdb-react-ui-kit";
+
 
 function Popular_destination() {
   let iconGreen = { color: "#0a4843", fontSize: "1.5em" };
   let iconBlue = { color: "#032d55", fontSize: "1.5em" };
+
+
 
 
     return (
@@ -18,11 +22,11 @@ function Popular_destination() {
           
           <div className="small_container2 ">
               <span className="icon2"> <FiMapPin style={iconGreen}/></span> 
-              <h3 className="text2">Akshur </h3>
+              <h3 className="text2">Akshour </h3>
           </div> 
           <div className="small_container3">
             <span className="icon3"> <FiMapPin style={iconBlue}/></span> 
-            <h3 className="text3">Beach </h3>
+            <h3 className="text3">Stehat</h3>
           </div> 
           <div className="small_container1 ">
             <span className="icon1"> <FiMapPin style={iconGreen}/></span> 

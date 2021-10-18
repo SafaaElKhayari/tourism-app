@@ -1,6 +1,5 @@
 import React from 'react'
 import QuestionComponent from '../question'
-import Emojify from 'react-emojione';
 import { Icon } from '@iconify/react';
 
 

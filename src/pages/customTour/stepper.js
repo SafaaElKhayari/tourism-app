@@ -43,7 +43,7 @@ export default function StepperComponent(){
                         </div>
                         <div>
                             {page === 1 && <ChooseTourType title="Let's get started" subtitle="What do you prefer ?" customizeTour= {handleYesClick} chooseTour={handleChooseTourClick}/>}
-                            {page === 2 && <ChoosePlaces title="Now let's talk food !" subtitle="Would you prefer to add a restaurant or a café to your tour ?"/>}
+                            {page === 2 && <ChoosePlaces title="Here are the worth visiting places in the blue city" subtitle="Just click to add the places you would like to visit"/>}
                             {page === 3 && <AddRestaurant title="Now let's talk food !" subtitle="Would you prefer to add a restaurant or a café to your tour ?" yesBtn={handleYesClick} noBtn={handleNoClick}/>}
                             {page ===4 && <ChooseRestaurant  title="Some good places in Chefchaouen" subtitle="Please pick at least one restaurant"/>}
                             {page ===5 && <AddHotel title="What about spending the night under the beautiful sky of the blue city ?" subtitle="Would you like a hotel for the night?" yesBtn={handleYesClick} noBtn={handleNoClick}/>}

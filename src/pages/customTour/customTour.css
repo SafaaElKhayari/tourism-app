@@ -10,6 +10,14 @@
   --darkGreen: #28857d;
 }
 
+.loading-text{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: var(--font-family);
+  color: var(--darkGreen);
+  font-size: 24px;
+}
+
 .stepper-container {
   min-height: 90vh;
   margin-top: 80px;

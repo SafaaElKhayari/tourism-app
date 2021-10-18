@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import HotelsComponent from '../hotels'
 import RestaurantsComponent from '../restaurants'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 
 function ChooseRestaurant(props) {
@@ -18,8 +18,8 @@ function ChooseRestaurant(props) {
         setCounter((preValue)=>{
             return preValue -1;
         })
-    }
-
+    }    
+    
     return (
         <div>
             <h3 className="question">{props.title}</h3>

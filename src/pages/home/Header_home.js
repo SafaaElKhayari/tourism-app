@@ -1,11 +1,9 @@
 import React from 'react'
 import './header_home.css'
-//import chaouen from '../../assets/logos/chaouen.jpeg'
 import header1 from '../../assets/header1.jpg'
-//import header2 from '../../assets/header2.jpg'
-//import Doors from '../../assets/Doors.jpg'
 
-import "bootstrap-css-only/css/bootstrap.min.css";
+
+// import "bootstrap-css-only/css/bootstrap.min.css";
 import { MDBContainer } from 'mdbreact';
 import { Link } from 'react-router-dom';
 
