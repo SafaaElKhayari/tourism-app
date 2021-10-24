@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import ChooseTourType from './steps/ChooseTourType';
 import AddRestaurant from './steps/AddRestaurant';
 import AddHotel from './steps/AddHotel';
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import ChooseRestaurant from './steps/ChooseRestaurant';
 import ChooseHotel from './steps/ChooseHotel';
 import AddEvents from './steps/Events';
@@ -11,9 +11,12 @@ import LoadingTour from './steps/LoadingTour';
 import ChoosePlaces from './steps/ChoosePlaces';
 import Circuit from '../tours/circuit';
 
+import Result from './resultat';
+
 
 export default function StepperComponent(){
     const [page,setPage] = useState(1);
+ 
 
     function goNextPage(){
         if(page === 8) return;
@@ -34,12 +37,23 @@ export default function StepperComponent(){
 
     }
     
+    useEffect(()=>{
+        window.scroll(0,0)
+        const timer = setTimeout(() => {
+
+          if(page === 8 ){
+            setPage((page)=>10)
+          }
+         
+        }, 2000);
+    })
+    
         return (
             <div className="d-flex stepper-container" style={{background:`linear-gradient(180deg, #C5C2C2 27.6%, #0A4843 95.31%)`}}>
-                <div className="stepper-content">
+                {page !==10 && <div className="stepper-content">
                     <div className="stepper-inner container">
                         <div>
-                            <progress max="8" value={page} />
+                            {page!==10 && <progress max="8" value={page} />}
                         </div>
                         <div>
                             {page === 1 && <ChooseTourType title="Let's get started" subtitle="What do you prefer ?" customizeTour= {handleYesClick} chooseTour={handleChooseTourClick}/>}
@@ -51,6 +65,7 @@ export default function StepperComponent(){
                             {page ===7 && <AddEvents  title="Let’s add some activities !" subtitle="Here are some upcoming cultural events in Chefchaouen, would you like to add some to your tour ?" yesBtn={handleYesClick} noBtn={handleNoClick}/>}
                             {page === 8 && <LoadingTour title="Generating your path for an amazing journey" subtitle="Please Wait !" />}
                             {page === 9 && <Circuit />}
+                            
                         </div>
                         
                         {page !== 1 && page !==7 && page!==8 && page!==9
@@ -66,15 +81,20 @@ export default function StepperComponent(){
                         </div>}
 
                     
-                        {page === 7 && 
+                        {page === 7 && page!==10 &&
                         <div className="btn-container">
                             <button onClick={goPrevPage} className="float-left btn-lg btn btn-outline-primary prev-btn">Previous</button>
                             <button onClick={goNextPage} className=" float-right btn-lg btn btn-success next-btn">Generate</button>
                         </div>
+
                         }
-                        
+                       
                     </div>
-                </div>
+                    
+                </div>}
+                {page === 10 && <Result /> }
+                 
             </div>
+            
         )
         }

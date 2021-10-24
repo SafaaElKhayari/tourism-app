@@ -92,7 +92,7 @@ function App() {
     path="/Profile"
     render={() =>
       isAuthenticated ? (
-        <Profile profile={true} setAuth={setAuth} isAuthenticated={isAuthenticated}  />
+        <Profile profile={true} setAuth={setAuth} isAuthenticated={isAuthenticated} setUnderlineFunction={setUnderlineFunction} underline={underline} />
       ) : (
         <Redirect to="/LoginPageHome" />
       )
@@ -103,7 +103,7 @@ function App() {
     path="/Registration"
     render={props =>
       !isAuthenticated ? (
-      <Registration setAuth={setAuth}/>
+      <Registration setAuth={setAuth} underline={underline} setUnderlineFunction={setUnderlineFunction}/>
     
       ) : (
         <Redirect to="/" />

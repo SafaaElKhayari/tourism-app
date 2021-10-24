@@ -9,10 +9,10 @@ import { Navbar } from 'react-bootstrap';
 import NavBar from '../home/NavBar';
 import Footer from '../../components/navigation/footer';
 
-function RegisterPage({setAuth}) {
+function RegisterPage({setAuth, underline, setUnderlineFunction}) {
     return (
         <div>
-            <NavBar/>
+            <NavBar underline={underline} setUnderlineFunction={setUnderlineFunction}/>
             <div className="maincontainer registration">
             <div className="container-fluid">
                 <div className="row no-gutter">               
