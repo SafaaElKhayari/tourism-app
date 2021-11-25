@@ -52,12 +52,15 @@ export default function StepperComponent(){
             <div className="d-flex stepper-container" style={{background:`linear-gradient(180deg, #C5C2C2 27.6%, #0A4843 95.31%)`}}>
                 {page !==10 && <div className="stepper-content">
                     <div className="stepper-inner container">
+                    <div><button onClick={()=>{
+                        setPage(10)
+                    }}>Skip</button></div>
                         <div>
                             {page!==10 && <progress max="8" value={page} />}
                         </div>
                         <div>
                             {page === 1 && <ChooseTourType title="Let's get started" subtitle="What do you prefer ?" customizeTour= {handleYesClick} chooseTour={handleChooseTourClick}/>}
-                            {page === 2 && <ChoosePlaces title="Now let's talk food !" subtitle="Would you prefer to add a restaurant or a café to your tour ?"/>}
+                            {page === 2 && <ChoosePlaces title="Here are the worth visiting places in the blue city" subtitle="Just click to add the places you would like to visit"/>}
                             {page === 3 && <AddRestaurant title="Now let's talk food !" subtitle="Would you prefer to add a restaurant or a café to your tour ?" yesBtn={handleYesClick} noBtn={handleNoClick}/>}
                             {page ===4 && <ChooseRestaurant  title="Some good places in Chefchaouen" subtitle="Please pick at least one restaurant"/>}
                             {page ===5 && <AddHotel title="What about spending the night under the beautiful sky of the blue city ?" subtitle="Would you like a hotel for the night?" yesBtn={handleYesClick} noBtn={handleNoClick}/>}

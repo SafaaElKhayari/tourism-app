@@ -19,7 +19,13 @@
     padding-top: 0;
     padding-bottom: 80px;
 }
-
+.loading-text{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: var(--font-family);
+  color: var(--darkGreen);
+  font-size: 24px;
+}
 .organizing-trip-inner{
   position: relative;
   right: -45px;
@@ -166,7 +172,6 @@
   top: 5px;
   right: 20px;
   z-index: 1;
-  background: rgba(10, 72, 67, 0.96);
   width: 55px;
   height: 55px;
   padding: 5px 0;
@@ -175,16 +180,15 @@
   border-radius: 10px;
   color: #FFFFFF;
   font-weight: 700;
-  text-align: center;
-  -webkti-box-sizing: border-box;
+  /* text-align: center; */
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 .post-module .thumbnail .date .day {
-  font-size: 18px;
+  font-size: 20px;
 }
 .post-module .thumbnail .date .month {
-  font-size: 12px;
+  font-size: 15px;
   text-transform: uppercase;
 }
 .post-module .thumbnail img {
@@ -230,13 +234,16 @@
 }
 
 .post-module .post-content .post-meta {
-  margin-right:0;
-  margin-left: 0;
-  margin: 20px;
+  /* margin-right:0;
+  margin-left: 0; */
+  /* margin: 10px; */
+  margin-bottom: 15px;
+  margin-top:-10px;
+
   color: #999999;
 }
 .post-module .post-content .joinBtn{
-  padding-top: 20px;
+  padding-top:15px;
   font-family: var(--font-family);
   font-style: normal;
   font-size: 20px;

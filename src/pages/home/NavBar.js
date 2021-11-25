@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React,{ useState,useEffect,useRef} from 'react'
 import logo from '../../assets/logos/logo2.svg'
 import './navBar.css'
-import { useState,useRef} from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { FaSignOutAlt } from "react-icons/fa";
@@ -60,9 +59,7 @@ function NavBar({setAuth, scro=true ,isAuthenticated, profile=false,setUnderline
           console.error(err.message);
         }
       };
-      const removeUnderline =()=>{
-        setUnderlineFunction(0,0,0);
-      }
+     
    useEffect(
        ()=>{
            const line=underlineRef.current;
@@ -71,7 +68,8 @@ function NavBar({setAuth, scro=true ,isAuthenticated, profile=false,setUnderline
         line.style.left=`${underline.left}px`;
         line.style.top=`${underline.top}px`;
         line.style.width=`${underline.width}px`;
-        console.log(underline)}
+        //console.log(underline)
+    }
     
     }  ,[setUnderlineFunction,handleClick]
        
@@ -100,20 +98,27 @@ function NavBar({setAuth, scro=true ,isAuthenticated, profile=false,setUnderline
                         <Link to="/LoginPage" className="nav-link"  tabIndex="-1" aria-disabled="true" onClick={handleClick}>Tours</Link>  
                         </li>
         
-                        <div className="container-sm" className="sign">
+                        <div className="container-sm sign">
                         <button onClick={handleToggleClick} className='toggle-btn'><FaBars /></button>
                         
                            { isAuthenticated ?  
                             
                             <Link to="/Profile">
-                             {profile?<button onClick={e => logout(e)} type="button" className=" btn btn-rounded btn-primary profile-btn">
+                             {profile?<button onClick={e => logout(e)} type="button" className=" btn btn-rounded  profile-btn">
                              <FaSignOutAlt/>  Sign Out</button>:
-                             <button  type="button" className=" btn btn-rounded btn-primary profile-btn">
+                             <button  type="button" className=" btn btn-rounded  profile-btn">
                             <i class="far fa-user pr-2"   aria-hidden="true"></i>Profile</button>}
                             
                             </Link>:
-                         <div><Link to="/LoginPageHome"> <button type="button" onClick={removeUnderline} className="btn sign-btn">sign in </button></Link>
-                            <Link to="/Registration"> <button type="button" className="btn btn-dark">sign up</button> </Link></div> }
+                         <div>
+                         <Link to="/LoginPageHome"> 
+                            <button type="button" className="btn sign-btn">sign in </button>
+                         </Link>
+                        <Link to="/Registration">
+                            <button type="button" className="btn btn-dark">sign up</button> 
+                        </Link>
+                        </div> 
+                    }
                             
                         </div>
                     </ul>
@@ -124,4 +129,4 @@ function NavBar({setAuth, scro=true ,isAuthenticated, profile=false,setUnderline
     )
 
 }
-export default NavBar
+export default NavBar;

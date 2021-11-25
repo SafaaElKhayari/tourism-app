@@ -6,9 +6,9 @@
 }
 
 .sign {
-  position: absolute;
-  top: 26px;
-  right: 25px;
+  position: relative;
+  top: 0px;
+  right: -100px !important;
 }
 .sign-btn {
   border-radius: 5px;
@@ -98,4 +98,8 @@
 }
 .logo-sign-out {
   color: white !important;
+}
+.profile-btn {
+  background-color: #0a4843 !important;
+  border-color: #0a4843 !important;
 }

@@ -1,16 +1,11 @@
 
 
-
+import { BrowserRouter as Router, Route, Switch,Redirect } from 'react-router-dom';
 import React, { Fragment,Suspense, useState, useEffect } from "react";
 import LoginPage from './pages/login/LoginPage';
 import Registration from './pages/login/RegisterPage';
+import './pages/login/login.css'
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
 
  import CustomTour from './pages/customTour/customTour';
 // import customTour from './pages/customTour/customTour';

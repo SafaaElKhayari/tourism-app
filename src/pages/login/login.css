@@ -76,6 +76,9 @@
 }
 
 .profile-btn {
+  position: relative;
+  right: -60px;
   background-color: #0a4843 !important;
   border-color: #0a4843 !important;
+  color: aliceblue !important;
 }

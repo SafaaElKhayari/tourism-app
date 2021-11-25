@@ -76,7 +76,15 @@
   line-height: 15px;
   /* display: flex; */
   text-align: justify;
+
+  --max-lines:3;
+  max-height:calc(15px * var(--max-lines));
+  overflow: hidden;
 }
+
+.place-description::after{
+  content: "..."}
+
 .active {
   color: var(--darkGreen) !important;
   font-weight: 400;

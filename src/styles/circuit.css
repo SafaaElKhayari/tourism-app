@@ -105,8 +105,8 @@ body {
 }
 
 .img-caro {
-  width: 500px;
-  height: 300px;
+  width: 900px !important;
+  height: 500px;
 }
 .card-title {
   padding-bottom: 0px;
