@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import NavBar from '../home/NavBar'
 import LoginForm from './LoginForm'
-import RegisterPage from './RegisterPage'
 
 
 function LoginPage({setAuth, underline, setUnderlineFunction}) {
-    console.log(underline)
+  
     return (
         <div>
         

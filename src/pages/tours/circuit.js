@@ -3,8 +3,6 @@ import {Spinner} from 'react-bootstrap'
 import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
-
-
 import '../../styles/circuit.css'
 import medinaaa from '../../assets/medinaaa.jpg'
 import CHEFCHAOUEN_KASBAH from '../../assets/CHEFCHAOUEN_KASBAH.jpg'
@@ -28,11 +26,10 @@ function Circuit() {
 
 	const getTours = async() =>{
         try {
-            const response = await fetch ("http://localhost:5000/tours");
+            const response = await fetch ("http://localhost:8000/tours");
             const jsonData = await response.json();
             settours(jsonData);
             setisLoading(false)
-
 
         } catch (error) {
             console.error(error.message);
@@ -46,7 +43,6 @@ function Circuit() {
 
 	const setImg=(img)=>{
 		const buffer = img;
-        const mimeType = 'image/jpg'
         const b64 = new Buffer(buffer).toString('base64')
 		return b64;
 	}
@@ -66,25 +62,25 @@ function Circuit() {
 			<div className="row ">
 			  <div className="col-md-7 px-3">
 				<div className="card-block px-6">
-				  <h4 className="card-title">{tour.name}</h4>
-				  <p className="card-text">
-					{tour.description}
+				  <h4 className="card-title trip-name">{tour.name}</h4>
+				  <p className="card-text para-tours">
+				  {tour.description}
 				</p>
 				  <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>	
-				  <Stepper activeStep={1} alternativeLabel>
+				  <Stepper activeStep={3} alternativeLabel>
 						<Step> <StepLabel>{tour.step1}</StepLabel></Step>
 						<Step><StepLabel>{tour.step2}</StepLabel></Step>
 						<Step><StepLabel>{tour.step3}</StepLabel></Step>
 					</Stepper>
 				  <div className="container-sm btn_cont">
-					<button className="button--pan button btn_pos"><span>TAKE ME THERE</span></button>
+					<button className="button--pan button "><span>TAKE ME THERE</span></button>
 				  </div>
 				
 				</div>
 			 </div>
 			  <div className="col-md-5">
 			<div className="carousel-inner"> 
-				<img  className="img-caro w-100" src={`data:${'image/jpg'};base64,${setImg(tour.image)}`} alt=""/>  
+				<img  className="img-caro w-100" src={`data:${'image/jpg'};base64,${setImg(tour.image)}`}  alt=""/>  
 			</div>
 
 			  {/* <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel"> */}

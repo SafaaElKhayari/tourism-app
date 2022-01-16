@@ -1,87 +1,67 @@
 import React,{ useState } from 'react'
 import {Col,Card} from 'react-bootstrap';
 import {FaCheckCircle} from "react-icons/fa"
-import { useEffect } from 'react';
+import { useContext,useEffect} from 'react';
 import "mdbreact";
 
 import "../styles/places.css"
 import "./rating";
 import StarRating from './rating';
+import UserContext from '../Context/user'
 
 
 
-function CardComp({card_mode,addItem,removeItem,counter,idx,key,showModal,place}) {
+function CardComp({card_mode,addItem,removeItem,idx,showModal,place}) {
 
     const [remove,setRemove]= useState(false);
-    const [userId,setUserId]= useState("");
     const choose_mode=card_mode;
     const iconStyles={ color: "white", fontSize: "1.5em" };
-    const getProfile = async () => {
-        try {
-          const res = await fetch("http://localhost:5000/users/profile", {
-            method: "POST",
-            headers: { jwt_token: localStorage.token }
-          });
-    
-          const parseData = await res.json();
-          setUserId(parseData.id)
 
-        } catch (err) {
-          console.error(err.message);
-        }
-      };
-    
-      useEffect(() => {
-        getProfile();
-      }, []);
 
+// 1 + get User Id
+    const {user} = useContext(UserContext);
+    const userId = user.id || 9;
+
+  
+    
+// 2 + add selected places id and user id to bd 
       const getChosenPlaces = async ()=>{
         try{
             const {id}=place
-            //console.log(id)
             const body={id,userId}
-            const res =await fetch("http://localhost:5000/places/choosePlaces",{
+            
+            const res =await fetch("http://localhost:8000/places/choosePlaces",{
                 method:"POST",
                 headers:{ "Content-Type": "application/json" ,
                 'Accept': 'application/json'},
                 body:JSON.stringify(body)
             })
-            const parseRes = await res.json();
-            console.log(parseRes)
-
-
-
-
+            //const parseRes = await res.json();
+            //console.log(parseRes)
         }catch(err){
             console.error(err.message)
         }
 
       }
-
+// 3 + delete selected places id and user from to bd 
       const deleteChosenPlaces = async ()=>{
         try{
             const {id}=place
-            const res =await fetch("http://localhost:5000/places/choosePlacesDelete",{
+            console.log(id)
+            const res =await fetch("http://localhost:8000/places/remove",{
                 method:"POST",
                 headers:{ "Content-Type": "application/json" ,
                 'Accept': 'application/json'},
-                body:JSON.stringify({id})
+                body:JSON.stringify({id:id})
             })
             const parseRes = await res.json();
             console.log(parseRes)
 
-
-
-
         }catch(err){
             console.error(err.message)
         }
 
       }
-
-
-
-
 
 
 
@@ -89,19 +69,17 @@ function CardComp({card_mode,addItem,removeItem,counter,idx,key,showModal,place}
             setRemove(!remove);     
             if(!remove){
                addItem();
-               // save in Bd
+               // 4 + calling function that save in BD
                 getChosenPlaces();
                
 
             }else{
                removeItem();
-               // Remove from Bd
+               // 5 + calling function that remove from Bd
                deleteChosenPlaces();
             }}
 
-        /* useEffect(()=>{
-            getChosenPlaces();
-        },[]); */
+      
 
       
      const handleClick = ()=>{

@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useContext} from "react";
 import { useState } from 'react';
 import {FaCheckCircle} from "react-icons/fa"
-import TripCard from "../trips/tripCard";
+//import TripCard from "../trips/tripCard";
+import UserContext from "../../Context/user";
 import moment from 'moment';
 
 
@@ -9,21 +10,78 @@ import moment from 'moment';
 
 export default function EventCard(props) {
   const [remove,setRemove]= useState(false);
-  
-  // const buffer = props.event.image;
-  // const mimeType = 'image/jpg'
-  // const b64 = new Buffer(buffer).toString('base64')
-
   const [bg, setbg] = useState();
-
   const iconStyles={ color: "white", fontSize: "1.5em" };
+  const id = props.event.id;
+
+
+
+
+  // 1 + get user id 
+  const {user} = useContext(UserContext);
+  const userId = user.id
+  //console.log(userId)
+
+  // 2 + Save BD
+    const getChosenEvents = async ()=>{
+      try{
+          const body={id,userId}
+          console.log(body)
+          const res =await fetch("http://localhost:8000/customTour/chooseAnEvent/addEvent",{
+              method:"POST",
+              headers:{ "Content-Type": "application/json" ,
+              'Accept': 'application/json'},
+              body:JSON.stringify(body)
+          })
+          const parseRes = await res.json();
+          //console.log(parseRes)
+      }catch(err){
+          console.error(err.message)
+      }
+  }
+
+
+
+  // 3 + delete from bd 
+
+  const deleteChosenEvent = async ()=>{
+    try{ 
+        const res =await fetch("http://localhost:8000/customTour/chooseAnEvent/removeEvent",{
+            method:"POST",
+            headers:{ "Content-Type": "application/json" ,
+            'Accept': 'application/json'},
+            body:JSON.stringify({id})
+        })
+        const parseRes = await res.json();
+        //console.log(parseRes)
+
+    }catch(err){
+        console.error(err.message)
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
 
     const handleClickButton=()=>{
             setRemove(!remove);     
             if(!remove){
-               props.addItem();
+               props.addItem(); 
+               // Save in bd  
+               getChosenEvents();
+
             }else{
                props.removeItem();
+               // remove in bd
+               deleteChosenEvent();
             }
         }
             

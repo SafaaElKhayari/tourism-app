@@ -17,7 +17,7 @@ function RestaurantsComponent() {
 
     const getRestaus = async() =>{
         try {
-            const response = await fetch ("http://localhost:5000/customTour/chooseARestaurant");
+            const response = await fetch ("http://localhost:8000/customTour/chooseARestaurant/");
             const jsonData = await response.json();
             setrestos(jsonData);
             setisLoading(false)
@@ -28,6 +28,7 @@ function RestaurantsComponent() {
         }
     }
 
+    //console.log(restos)
     const addItem=()=>{
         setCloseAlert(true);
         setCounter((preValue)=>{

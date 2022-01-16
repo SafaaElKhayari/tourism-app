@@ -1,7 +1,7 @@
 
 
 import { BrowserRouter as Router, Route, Switch,Redirect } from 'react-router-dom';
-import React, { Fragment,Suspense, useState, useEffect } from "react";
+import React, { createContext,Suspense, useState, useEffect } from "react";
 import LoginPage from './pages/login/LoginPage';
 import Registration from './pages/login/RegisterPage';
 import './pages/login/login.css'
@@ -15,11 +15,19 @@ import DestinationsPage from './pages/destination/destination'
 import Home from './pages/home/home'
 import Trips from './pages/trips/Trips';
 import DiscoverTours from './pages/DiscoverTours/DiscoverTours';
+import UserContext from './Context/user'
 
 function App() {
+  
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user,setUser]=useState(null);
+
+  //console.log(user)
+  
+
   const checkAuthenticated = async () => {
     try {
-      const res = await fetch("http://localhost:5000/authentication/verify", {
+      const res = await fetch("http://localhost:8000/authentication/verify", {
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });
@@ -33,18 +41,44 @@ function App() {
   };
 
   useEffect(() => {
-    checkAuthenticated();
+     checkAuthenticated();
+     getProfile();
   }, []);
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  console.log(isAuthenticated)
+
+//Get userInfo
+  const getProfile = async () => {
+    try {
+      const res = await fetch("http://localhost:8000/users/profile", {
+        method: "POST",
+        headers: { jwt_token: localStorage.token }
+      });
+
+      const parseData = await res.json();
+      setUser(parseData);
+      //return parseData
+    
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+  
+
+
+
+
+
+  
+  //console.log(isAuthenticated)
 
   const setAuth = boolean => {
     setIsAuthenticated(boolean);
   };
 
+  //console.log(isAuthenticated)
+
   const [underline,setUnderline]=useState({left:0,width:0,top:0});
-  console.log(underline)
+  //console.log(underline)
 
   const setUnderlineFunction = (left,width,top) => {
     setUnderline(()=>{
@@ -53,8 +87,8 @@ function App() {
   };
       
   return (
-    
-  <div className="App">
+    <UserContext.Provider value={{user,isAuthenticated}}>
+    <div className="App">
   <Switch>
   
       <Route path="/" exact render={(props)=> <Home  setAuth={setAuth} isAuthenticated={isAuthenticated} setUnderlineFunction={setUnderlineFunction} underline={underline}/>}/>  
@@ -129,6 +163,8 @@ function App() {
   </Switch>
  
 </div>
+    </UserContext.Provider>
+  
   );
 }
 

@@ -1,13 +1,8 @@
-import React ,{Component} from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react';
 import './login.css';
 import "bootstrap-css-only/css/bootstrap.min.css";
-import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
-import LoginPage from './LoginPage';
-import { Navbar } from 'react-bootstrap';
 import NavBar from '../home/NavBar';
-import Footer from '../../components/navigation/footer';
 
 function RegisterPage({setAuth, underline, setUnderlineFunction}) {
     return (

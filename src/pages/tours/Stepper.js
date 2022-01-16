@@ -14,7 +14,7 @@ export default function StepperPage() {
   const steps = getSteps();
   return (
     <div>
-      <Stepper activeStep={3}>
+      <Stepper activeStep={2}>
         {steps.map((label) => {
           return (
             <Step  key={label} >

@@ -1,4 +1,4 @@
-import React,{ useState,useEffect,useRef} from 'react'
+import React,{ useState,useEffect,useRef,useCallback} from 'react'
 import logo from '../../assets/logos/logo2.svg'
 import './navBar.css'
 import { FaBars } from 'react-icons/fa';
@@ -12,7 +12,6 @@ function NavBar({setAuth, scro=true ,isAuthenticated, profile=false,setUnderline
     
    
     const underlineRef = useRef(null);
-   
     const [scroll,setScroll] = useState(scro);
     const [showMenu,setShowMenu]=useState(false);
     window.onscroll = function() {myFunction()};
@@ -28,19 +27,25 @@ function NavBar({setAuth, scro=true ,isAuthenticated, profile=false,setUnderline
             }
         }
     }
-    const handleClick = (e)=>{
-        window.scrollTo(0,0);
-        const text =e.target.getBoundingClientRect();
-        const left = text.left;
-        const top =text.top;
-        const width=text.width;
-        const under_top=top+50;
-        const under_left=left+12;
-        const under_width=width-28;
-        setUnderlineFunction(under_left,under_width,under_top);
-       
-    }
+    const handleClick = useCallback(
+        (e) => {
+            
+                window.scrollTo(0,0);
+                const text =e.target.getBoundingClientRect();
+                const left = text.left;
+                const top =text.top;
+                const width=text.width;
+                const under_top=top+50;
+                const under_left=left+12;
+                const under_width=width-28;
+                setUnderlineFunction(under_left,under_width,under_top);
+               
+            
+        },
+        [setUnderlineFunction],
+    )
     
+
      //console.log(isAuthenticated)
     const handleWindow = () =>{
         window.scrollTo(0,0);
@@ -71,7 +76,7 @@ function NavBar({setAuth, scro=true ,isAuthenticated, profile=false,setUnderline
         //console.log(underline)
     }
     
-    }  ,[setUnderlineFunction,handleClick]
+    }  ,[handleClick]
        
    )
     return (
@@ -84,17 +89,17 @@ function NavBar({setAuth, scro=true ,isAuthenticated, profile=false,setUnderline
                 
                 <div className="nav-header navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
-                         <Link  tabindex="1" className="nav-link"  aria-current="close-side-barage"  onClick={handleClick} to="/">Home </Link>
+                        <li className={`${showMenu?"sidebar hov  nav-item":"close-side-bar  nav-item"}`} >
+                         <Link  tabindex="1" className="nav-link"  aria-current="true"  onClick={handleClick} to="/">Home </Link>
                             <div ref={underlineRef} className="underline"></div>
                         </li>
-                        <li  className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
+                        <li  className={`${showMenu?"sidebar hov nav-item":"close-side-bar nav-item"}`} >
                         <Link to="/Destinations" className="nav-link "  onClick={handleClick}>Destinations </Link>
                         </li>
-                        <li  className={`${showMenu?"sidebar hov ":"close-side-bar"}`} className="nav-item ">
+                        <li  className={`${showMenu?"sidebar hov  nav-item":"close-side-bar  nav-item"}`} >
                         <Link to="/Trips" onClick={handleClick}  className="nav-link" >Trips</Link>   
                         </li>
-                        <li className={`${showMenu?"sidebar hov":"close-side-bar"}`} className="nav-item">
+                        <li className={`${showMenu?"sidebar hov  nav-item":"close-side-bar  nav-item"}`} >
                         <Link to="/LoginPage" className="nav-link"  tabIndex="-1" aria-disabled="true" onClick={handleClick}>Tours</Link>  
                         </li>
         

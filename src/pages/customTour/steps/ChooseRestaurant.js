@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import HotelsComponent from '../hotels'
+//import HotelsComponent from '../hotels'
 import RestaurantsComponent from '../restaurants'
-import { useState,useEffect } from 'react';
+import { useState} from 'react';
 
 
 function ChooseRestaurant(props) {

@@ -5,8 +5,9 @@ import headerProfile from './headerProfile.css'
 import HeaderProfile from './headerProfile'
 import TabsProfile from './tabsProfile'
 import HistoryProfile from './HistoryProfile'
-import { useState } from 'react'
-function Profile({isAuthenticated,profile,setAuth,setUnderlineFunction,underline}) {
+import { useState,useContext } from 'react'
+import UserContext from '../../Context/user'
+function Profile({profile,setAuth,setUnderlineFunction,underline}) {
     const [index,setIndex]=useState(0);
     const indexSetter=(ind)=>{
         setIndex(ind);
@@ -14,7 +15,8 @@ function Profile({isAuthenticated,profile,setAuth,setUnderlineFunction,underline
 
 
 
-
+    const {user,isAuthenticated} = useContext(UserContext);
+    
 
     
     return (

@@ -1,43 +1,26 @@
 import React from 'react'
 import headerProfilePic from '../../assets/header-profile.jpg'
 import avatarMix from '../../assets/avatar-mix.png'
-
 import Avatar from '@material-ui/core/Avatar';
 import {MdEdit  } from "react-icons/md";
-import { useState ,useEffect} from 'react';
+import { useState,useContext} from 'react';
+import UserContext from '../../Context/user'
+
 
 
 
 function HeaderProfile() {
-  const [showModal,setShowModal]=useState(false);
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
 
-  const getProfile = async () => {
-    try {
-      const res = await fetch("http://localhost:5000/users/profile", {
-        method: "POST",
-        headers: { jwt_token: localStorage.token }
-      });
-
-      const parseData = await res.json();
-      setName(parseData.userName);
-      setEmail(parseData.email)
-      console.log(parseData)
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
-  useEffect(() => {
-    getProfile();
-  }, []);
-
+  const [showModal,setShowModal]=useState(false); 
+  const {user} = useContext(UserContext);
+  console.log(user.id)
+  const [email, setEmail] = useState(user.email);
+  const [name, setName] = useState(user.userName);
+ 
     return (
         <div class="card  text-white card-profile">
           <img src={headerProfilePic} class="card-img img-profile" alt="..."/>
-       
-          <Avatar alt="avatar" src={avatarMix} class="avatar-profile" />
+        <Avatar alt="avatar" src={avatarMix} class="avatar-profile" />
           <div class="container-sm">
                 <h1 className="name-profile">{name}</h1>
                  <h3 className="email-profile">{email}</h3> 

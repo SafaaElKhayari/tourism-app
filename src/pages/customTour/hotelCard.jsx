@@ -1,8 +1,8 @@
-import React,{ useState } from 'react'
+import React,{ useState ,useContext } from 'react'
 import {Col,Card} from 'react-bootstrap';
 import {FaCheckCircle} from "react-icons/fa"
 import {DollarCircleOutlined} from '@ant-design/icons'
-
+import UserContext from '../../Context/user';
 import StarRating from '../../components/rating';
 
 
@@ -10,12 +10,72 @@ function HotelCard({addItem,removeItem,counter,idx,hotel}) {
 
     const [remove,setRemove]= useState(false);
     const iconStyles={ color: "white", fontSize: "1.5em" };
+    const id = hotel.id;
+
+// 1 + get user id 
+    const {user} = useContext(UserContext);
+    const userId = user.id
+   // console.log(UserId)
+
+// 2 + save selected hotel to bd 
+const getChosenHotels = async ()=>{
+    try{
+        const body={id,userId}
+        console.log(body)
+        const res =await fetch("http://localhost:8000/customTour/chooseAHotel/addHotel",{
+            method:"POST",
+            headers:{ "Content-Type": "application/json" ,
+            'Accept': 'application/json'},
+            body:JSON.stringify(body)
+        })
+        const parseRes = await res.json();
+        //console.log(parseRes)
+    }catch(err){
+        console.error(err.message)
+    }
+}
+
+
+// 3 + remove selected hotel from bd 
+
+    const deleteChosenHotel = async ()=>{
+        try{ 
+            const res =await fetch("http://localhost:8000/customTour/chooseAHotel/removeHotel",{
+                method:"POST",
+                headers:{ "Content-Type": "application/json" ,
+                'Accept': 'application/json'},
+                body:JSON.stringify({id})
+            })
+            const parseRes = await res.json();
+            //console.log(parseRes)
+
+        }catch(err){
+            console.error(err.message)
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     const handleClickButton=()=>{
             setRemove(!remove);     
             if(!remove){
                addItem();
+               // save to bd 
+               getChosenHotels();
             }else{
                removeItem();
+               // remove from bd 
+               deleteChosenHotel();
             }
         }
     const buffer = hotel.image;

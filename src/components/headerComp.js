@@ -1,6 +1,5 @@
 
 import  '../styles/headerComp.css'
-import { useEffect} from 'react';
  
 
 

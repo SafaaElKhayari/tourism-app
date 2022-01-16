@@ -19,7 +19,7 @@ function TripsComponent() {
 
     const getTrips = async() =>{
         try {
-            const response = await fetch ("http://localhost:5000/trips");
+            const response = await fetch ("http://localhost:8000/trips");
             const jsonData = await response.json();
             setTrips(jsonData);
             setisLoading(false)

@@ -1,23 +1,97 @@
-import React,{ useState } from 'react'
+import React,{ useState ,useContext} from 'react'
 import {Col,Card} from 'react-bootstrap';
 import {DollarCircleOutlined} from '@ant-design/icons'
 import {FaCheckCircle} from "react-icons/fa"
-// import "bootstrap-css-only/css/bootstrap.min.css"
 import"mdbreact";
-// import "@fortawesome/fontawesome-free/css/all.min.css";
 import StarRating from '../../components/rating';
+import UserContext from '../../Context/user';
 
 
 
 function RestauCard({addItem,removeItem,counter,idx,restaurant}) {
+
     const [remove,setRemove]= useState(false);
     const iconStyles={ color: "white", fontSize: "1.5em" };
+    
+
+// 1 get user id 
+
+    const {user} = useContext(UserContext) ;
+    const userId = user.id ;
+    const {id}=restaurant
+
+// 2 + add selected places id and user id to bd 
+
+    const getChosenRestaurants = async ()=>{
+        try{
+            
+            
+            
+            const body={id,userId}
+            console.log(body)
+            const res =await fetch("http://localhost:8000/customTour/chooseARestaurant/addRestaurant",{
+                method:"POST",
+                headers:{ "Content-Type": "application/json" ,
+                'Accept': 'application/json'},
+                body:JSON.stringify(body)
+            })
+            const parseRes = await res.json();
+            console.log(parseRes)
+        }catch(err){
+            console.error(err.message)
+        }
+
+    }
+
+
+// 3 + remove selected places id and user id from bd 
+
+    const deleteChosenRestaurants = async ()=>{
+        try{
+            
+            const res =await fetch("http://localhost:8000/customTour/chooseARestaurant/removeRestaurant",{
+                method:"POST",
+                headers:{ "Content-Type": "application/json" ,
+                'Accept': 'application/json'},
+                body:JSON.stringify({id})
+            })
+            const parseRes = await res.json();
+            console.log(parseRes)
+
+
+
+
+        }catch(err){
+            console.error(err.message)
+        }
+
+    }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
     const handleClickButton=()=>{
             setRemove(!remove);     
             if(!remove){
                addItem()
+ // Save in BD
+            getChosenRestaurants();
             }else{
+
                removeItem()
+               // Remove from BD
+               deleteChosenRestaurants()
             }
         }
 
@@ -29,7 +103,7 @@ function RestauCard({addItem,removeItem,counter,idx,restaurant}) {
         <Col  md={4} key={idx} sm className="restaurant-card">
             {remove && <FaCheckCircle style={iconStyles} className="btn-rounded counter" /> }    
             <Card className={`${remove?"bor":null}`}>
-                <Card.Img variant="top" src={`data:${mimeType};base64,${b64}`} style={{height: '380px'}} />
+                <Card.Img variant="top" src={`data:${mimeType};base64,${b64}`} style={{height: '200px'}} />
                     <Card.Body>
                         <div className="rating"><StarRating key={idx} /></div>
                         <Card.Title bsPrefix={'restaurant-name'}>{restaurant.name}</Card.Title>

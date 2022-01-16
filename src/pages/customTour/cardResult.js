@@ -2,14 +2,15 @@ import React from 'react'
 import medina2 from '../../assets/logos/medina2.jpg'
 import StarRating from '../../components/rating'
 
-function CardResult({getPlaceIndex,index}) {
- 
-  console.log("Here's the place : ")
-  const Place = getPlaceIndex(index);
-  const {name,category} = Place;
-  const b64 = new Buffer(Place.image).toString('base64')
-  const mimeType = 'image/jpg'
+function CardResult({place,index}) {
+  //console.log(place.image)
 
+  //console.log("Here's the place : ")
+  //const Place = getPlaceIndex(index);
+  const {name,category} = place;
+  const b64 = new Buffer(place.image || ' ').toString('base64')
+  const mimeType = 'image/jpg'
+ 
   
   //const {name}=place;
     return (
@@ -22,7 +23,7 @@ function CardResult({getPlaceIndex,index}) {
           <div class="col-md-8 colRound">
             <div class="card-body">
               <h5 class="card-title card-title-res">{name}</h5>
-              <p class="card-text card-text-updated">{category}</p>
+              <p class="card-text card-text-updated">{category || " "}</p>
               <p class="card-text card-text-res">you have chose this place we hope you'll like it</p>
               <div className="rating-res"><StarRating /></div>
             </div>

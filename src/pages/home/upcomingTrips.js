@@ -2,7 +2,6 @@ import React from 'react';
 import { useState ,useEffect} from 'react';
 import {Button,Row,Col, Container} from 'react-bootstrap';
 import "bootstrap-css-only/css/bootstrap.min.css";
-import tripPicture from "../../images/tripImage.jpeg";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import moment from 'moment';
 
@@ -11,7 +10,7 @@ const UpcomingTrips =()=>{
     const getTrips = async() =>{
         try {
             
-            const response = await fetch ("http://localhost:5000/trips");
+            const response = await fetch ("http://localhost:8000/trips");
             const jsonData = await response.json();
             setTrips(jsonData);
 

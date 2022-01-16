@@ -18,7 +18,7 @@ function HotelsComponent(props) {
 
     const getHotels = async() =>{
         try {
-            const response = await fetch ("http://localhost:5000/customTour/chooseAHotel");
+            const response = await fetch ("http://localhost:8000/customTour/chooseAHotel");
             const jsonData = await response.json();
             sethotels(jsonData);
             setisLoading(false)

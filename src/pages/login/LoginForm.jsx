@@ -1,5 +1,4 @@
 import React from 'react' ; 
-import RegisterPage from './RegisterPage' ;
 import { Link } from 'react-router-dom';
 import "bootstrap-css-only/css/bootstrap.min.css" ;
 import { useState } from 'react';
@@ -12,7 +11,7 @@ function LoginForm(props) {
     const [password,setPassword]=useState("")
     const [error,setError]=useState("")
     const notify = () =>  toast.success("Successful Login! Please Wait...")
-
+  
     
     const Emoji = props => (
         <span
@@ -30,7 +29,7 @@ function LoginForm(props) {
       setError("")
      try {
       const body = {email,password};
-      const response = await fetch("http://localhost:5000/users/login", {
+      const response = await fetch("http://localhost:8000/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" ,
         'Accept': 'application/json'},
@@ -42,10 +41,10 @@ function LoginForm(props) {
       if (parseRes.jwtToken) {
 
         localStorage.setItem("token", parseRes.jwtToken);
-        const timer = setTimeout(() => {
-          
+         const timer = setTimeout(() => {
          props.setAuth(true);
-        }, 2000);
+
+        }, 1000); 
         
         
       } else {
@@ -89,7 +88,7 @@ function LoginForm(props) {
                         <div className="text-center d-flex justify-content-between mt-4">
                             <p className="question-signin">Don't have an account?<Link to="/Registration" href="#!" onClick={props.handleSignIn} className="link-primary">  Sign up here</Link></p>
                         </div>
-                      {error=="" && <ToastContainer />} 
+                      {error==="" && <ToastContainer />} 
     </div>
                 
     )

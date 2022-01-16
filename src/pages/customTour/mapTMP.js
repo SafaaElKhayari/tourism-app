@@ -1,16 +1,23 @@
 import React from 'react';
 import H from "@here/maps-api-for-javascript";
-import  image from "../../assets/restaurant.jpeg"
+//import  image from "../../assets/restaurant.jpeg"
 import './customTour.css'
-import StarRating from '../../components/rating';
-import { Star } from '@mui/icons-material';
+//import StarRating from '../../components/rating';
+//import { Star } from '@mui/icons-material';
 //import onResize from 'simple-element-resize-detector';
+
+
+
+
+
+
+
+
 
 export default class Map extends React.Component {
   constructor(props) {
+
     super(props);
-  
-    this.places=this.props.places();
     // the reference to the container
     this.ref = React.createRef();
     // reference to the map
@@ -21,24 +28,23 @@ export default class Map extends React.Component {
   if (!this.map) {
    
     // Functions
-    var name = this.places[1].name
- console.log(name)
-    
- const b64 = new Buffer(this.places[1].image || ' ').toString('base64')
- const mimeType = 'image/jpg'
+  /*   console.log("places in map")
+   console.log(this.props.places()) */
+
+
     var photos = [
       {
-      "url": `data:${mimeType};base64,${b64}`,
-      "thumbnail": `data:${mimeType};base64,${b64}`,
+      "url": "//commons.wikimedia.org/wiki/File:11-09-fotofluege-cux-allg-25a.jpg",
+      "thumbnail": "//upload.wikimedia.org/wikipedia/commons/thumb/3/3b/11-09-fotofluege-cux-allg-25a.jpg/120px-11-09-fotofluege-cux-allg-25a.jpg",
       "width": 120,
       "height": 120,
-      "title": `data:${mimeType};base64,${b64}`,
+      "title": "File:11-09-fotofluege-cux-allg-25a.jpg",
       "author": "Ralf Roletschek",
       "license": null,
-      "latitude": this.places[1].coord.coordinates[1],
-      "longitude": this.places[1].coord.coordinates[0],
+      "latitude": 35.16866735964295,
+      "longitude": -5.270122706797885,
       "pageid": "16338452",
-      "fullurl": `data:${mimeType};base64,${b64}`
+      "fullurl": "//upload.wikimedia.org/wikipedia/commons/thumb/3/3b/11-09-fotofluege-cux-allg-25a.jpg/300px-11-09-fotofluege-cux-allg-25a.jpg"
       },
       {
       "url": "//commons.wikimedia.org/wiki/File:12-07-12-wikimania-wdc-by-RalfR-010.jpg",
@@ -66,8 +72,9 @@ export default class Map extends React.Component {
       "fullurl": "//upload.wikimedia.org/wikipedia/commons/thumb/4/4c/2012-07-22_15-37-00-fort-giromagny.jpg/300px-2012-07-22_15-37-00-fort-giromagny.jpg",
       "author": "ComputerHotline"
       }];
-    const data =[{latitude:this.places[1].coord.coordinates[1],longitude:this.places[1].coord.coordinates[0]
-    }]
+    const data =[{latitude:35.1704214195607,longitude:-5.26248377600656,
+    },{latitude:35.17561321515214,longitude:-5.272010981824954},
+    {latitude:35.16866735964295,longitude:-5.270122706797885}]
 
     function startClustering(map, ui, getBubbleContent, data) {
       // First we need to create an array of DataPoint objects for the ClusterProvider
@@ -112,6 +119,20 @@ export default class Map extends React.Component {
     
         // Create a marker from a random point in the cluster
         var clusterMarker = new H.map.Marker(cluster.getPosition());
+
+        // Create a marker with pic
+      /*   var clusterMarker = new H.map.Marker(cluster.getPosition(), {
+          icon: new H.map.Icon(data.thumbnail, {
+            size: {w: 50, h: 50},
+            anchor: {x: 25, y: 25}
+          }),
+    
+          // Set min/max zoom with values from the cluster,
+          // otherwise clusters will be shown at all zoom levels:
+          min: cluster.getMinZoom(),
+          max: cluster.getMaxZoom()
+        }); */
+    
         // Link data from the random point from the cluster to the marker,
         // to make it accessible inside onMarkerClick
         clusterMarker.setData(data);
@@ -140,6 +161,7 @@ export default class Map extends React.Component {
     // Helper function for getting a random point from a cluster object
     function getRandomDataPoint(cluster) {
       var dataPoints = [];
+    
       // Iterate through all points which fall into the cluster and store references to them
       cluster.forEachDataPoint(dataPoints.push.bind(dataPoints));
     
@@ -184,6 +206,26 @@ export default class Map extends React.Component {
 
 
 
+
+
+
+  /*  function addMarkersAndSetViewBounds() {
+      // create map objects
+      var place1 = new H.map.Marker({lat:35.1704214195607 ,  lng:-5.26248377600656}),
+          place2 = new H.map.Marker({lat:35.17561321515214, lng:-5.272010981824954}),
+          place3 = new H.map.Marker({lat:35.16866735964295, lng:-5.270122706797885}), 
+          group = new H.map.Group();
+    
+      // add markers to the group
+      group.addObjects([place1,place2, place3]);
+      map.addObject(group);
+    
+      // get geo bounding box for the group and set it to the map
+      map.getViewModel().setLookAtData({
+        bounds: group.getBoundingBox()
+      });
+    }  */
+
     const platform = new H.service.Platform({
       apikey: 'xnlzYffs28Ulilc8LNLHFCDU_8tgSd_I8dw7GKo2mtA'
     });
@@ -207,15 +249,43 @@ export default class Map extends React.Component {
     // behavior implements default interactions for pan/zoom (also on mobile touch environments)
     var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     var ui = H.ui.UI.createDefault(map, layers);
-   
+   /*  var mapSettings = ui.getControl('mapsettings');
+    var zoom = ui.getControl('zoom');
+    var scalebar = ui.getControl('scalebar'); */
+
+    // Add info bubble to the UI:
+      /* var bubble = new H.ui.InfoBubble({ lat:35.168202128112526, lng:-5.269542968447736 }, {
+        content: '<b>Hello World!</b>'
+     });
+
+      ui.addBubble(bubble); */
+    
+
+    // Define a variable holding SVG mark-up that defines an icon image:
+    /* var svgMarkup = '<svg width="24" height="24" ' +
+        'xmlns="http://www.w3.org/2000/svg">' +
+        '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
+        'height="22" /><text x="12" y="18" font-size="12pt" ' +
+        'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
+        'fill="white"></text></svg>';
+
+    // Create an icon, an object holding the latitude and longitude, and a marker:
+    var icon = new H.map.Icon(svgMarkup),
+        coords = {lat:35.168202128112526, lng:-5.269542968447736},
+        marker = new H.map.Marker(coords, {icon: icon});
+
+    // Add the marker to the map and center the map at the location of the marker:
+    map.addObject(marker);
+    */
+    /* var coords = {lat:35.168202128112526, lng:-5.269542968447736}
+    var madridMarker = new H.map.Marker(coords);
+    map.addObject(madridMarker);
+    map.setCenter(coords); */
     //addMarkersAndSetViewBounds(map);
     function getBubbleContent(data) {
-      console.log("hi mother fucker")
-      
-     
       return [
-        '<div >','<h4 className="bubble" >','station 1' ,'</h4>','<h6 className="bubble" >',name ,'</h6>',
-        '<img  src="/static/media/restaurant.b8dd6470.jpeg" width="200" height="160" />','<br/>',
+        '<div >','<h6 className="bubble" >Restaurant</h6>',
+        '<img  src="/static/media/restaurant.b8dd6470.jpeg" width="100" height="60" />','<br/>',
       '<p> lat : ',data.latitude.toFixed(6) ,'<br/>','lat : ',data.longitude.toFixed(6),'</p>' ,
 
       ,

@@ -1,16 +1,12 @@
 import React,{ useState,useEffect} from 'react';
-import { Container, Nav, Row,Col,Card} from 'react-bootstrap'
-import {FaCheckCircle, FaSpinner} from "react-icons/fa"
+import { Container, Nav, Row,Col} from 'react-bootstrap'
 import "mdbreact";
 import { Spinner } from 'react-bootstrap';
-
-
-
 import "../styles/places.css"
 import "./rating";
 import CardComp from './CardComp';
 import Modal from '../pages/customTour/Toasts/ToastPlaces.jsx';
-import StarRating from './rating';
+
 
 
 
@@ -20,7 +16,7 @@ export default function Places({card_mode},props) {
     const [counter,setCounter]=useState(0);
     const [closeAlert,setCloseAlert] = useState(false);
     const [isLoading, setisLoading] = useState(true);
-    const choose_mode=card_mode;
+    const [categoryItems,setCategoryItems]=useState([])
 
     const addItem=()=>{
         setCloseAlert(true);
@@ -34,9 +30,10 @@ export default function Places({card_mode},props) {
 
     const getPlaces = async() =>{
         try {
-            const response = await fetch ("http://localhost:5000/places");
+            const response = await fetch ("http://localhost:8000/places");
             const jsonData = await response.json();
             setPlaces(jsonData);
+            setCategoryItems(jsonData)
             setisLoading(false)
             // setPlaces(shuffle(places))
         } catch (error) {console.error(error.message);}
@@ -48,6 +45,21 @@ export default function Places({card_mode},props) {
     useEffect(()=>{
         getPlaces();   
     },[]);
+
+    const allCategory = ()=>{
+        setCategoryItems(places)
+    }
+    const naturalCategory = ()=>{
+        setCategoryItems(places.filter(place => place.category === 'Natural'))
+    }
+    const culturalCategory = ()=>{
+        setCategoryItems(places.filter(place => place.category === 'Cultural'))
+    }
+    const beachCategory = ()=>{
+        setCategoryItems(places.filter(place => place.category === 'Beach'))
+    }
+
+
     
     
     return (
@@ -57,16 +69,16 @@ export default function Places({card_mode},props) {
             <Col>   
                     <Nav className="justify-content-center" activeKey="/all">
                         <Nav.Item  bsPrefix={"link"}>
-                            <Nav.Link eventKey="/all">All</Nav.Link>
+                            <Nav.Link onClick={allCategory} eventKey="/all">All</Nav.Link>
                         </Nav.Item >
-                        <Nav.Item  bsPrefix={"link"} >
+                        <Nav.Item onClick={naturalCategory} bsPrefix={"link"} >
                             <Nav.Link eventKey="natural">Natural</Nav.Link>
                         </Nav.Item  >
                         <Nav.Item bsPrefix={"link"}>
-                            <Nav.Link  eventKey="cutural">Cultural</Nav.Link>
+                            <Nav.Link onClick={culturalCategory} eventKey="cutural">Cultural</Nav.Link>
                         </Nav.Item >
                         <Nav.Item bsPrefix={"link"}>
-                            <Nav.Link  eventKey="beach">Beach</Nav.Link>
+                            <Nav.Link  onClick={beachCategory} eventKey="beach">Beach</Nav.Link>
                         </Nav.Item >
                     </Nav>
                 </Col>
@@ -82,7 +94,7 @@ export default function Places({card_mode},props) {
                 {(isLoading && <div><h3 className="pt-5 loading-text">Fetching magic for you ... </h3>  <Spinner animation="border" variant="success" size="xxl" /></div>)}
                 {!isLoading &&
                 <Row md={4} className="pt-2">
-                        {places.map(place =>(
+                        {categoryItems.map(place =>(
                             <CardComp place={place} key={place.id} idx={place.id} card_mode={card_mode} addItem={addItem} removeItem={removeItem} counter={counter} showModal={showModal}  /> 
             
                         ))}

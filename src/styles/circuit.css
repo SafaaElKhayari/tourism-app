@@ -89,12 +89,6 @@ body {
   mix-blend-mode: difference;
 }
 
-.button--pan::before {
-  content: "";
-  background: #000;
-  transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
-}
-
 .button--pan:hover::before {
   transform: translate3d(0, -100%, 0);
 }
@@ -120,4 +114,8 @@ body {
 }
 .btn_cont {
   padding: 5px;
+}
+
+.para-tours {
+  font-size: 10pt !important;
 }

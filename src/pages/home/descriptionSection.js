@@ -8,7 +8,7 @@ const DescriptionSection =() =>{
             <div className="row justify-content-end">
                 <div className="col">
                     <h5 className="organizing-trip-title">We organize your trip</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis tempore nulla qui minima tempora in, eum eveniet fugit earum quam voluptate cumque veritatis, omnis, ad pariatur nisi saepe? Corporis, eligendi.</p>
+                            <p> We suggest a lot of interesting trajects tried by our clients that include recommendated attractions and authentic restaurants hotels  </p>
                 </div>
         
                 <div className="organizing-trip-inner col">
@@ -45,7 +45,7 @@ const DescriptionSection =() =>{
                 </div>
                 <div className="col">
                     <h5 className="stunning-places-title">We help you discover stunning places</h5>
-                    <p className="stunning-places-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis tempore nulla qui minima tempora in, eum eveniet fugit earum quam voluptate cumque veritatis, omnis, ad pariatur nisi saepe? Corporis, eligendi.</p>
+                    <p className="stunning-places-p">historical monuments, waterfalls, beaches, and cultural attractions such as the souks and old Medina, in addition to information on accommodations in the region (hotels, restaurants, cafes, etc.)</p>
                 </div>
             </div>
         

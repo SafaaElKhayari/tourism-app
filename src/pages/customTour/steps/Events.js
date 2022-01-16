@@ -27,7 +27,7 @@ function AddEvents(props) {
     }
     const getEvents = async() =>{
         try {
-            const response = await fetch ("http://localhost:5000/customTour/chooseAnEvent");
+            const response = await fetch ("http://localhost:8000/customTour/chooseAnEvent");
             const jsonData = await response.json();
             setevents(jsonData);
             setisLoading(false);

@@ -1,8 +1,7 @@
 import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import LoginPage from './LoginPage'
+import { Link } from "react-router-dom";
 import { useState ,useEffect} from 'react';
 import "bootstrap-css-only/css/bootstrap.min.css";
 
@@ -15,22 +14,23 @@ function RegisterForm(props) {
     const [error,setError]=useState("")
     const notify = () =>  toast.success("User Registration Successful! Please Login")
     
+    console.log(props.setAuth)  
+  
     
-    
-    
+    // set auth true after making sure of the good registration 
     useEffect(()=>{
       const timer = setTimeout(() => {
         if(registered){
-           console.log('This will run after 1 second!');
+           console.log('Successfully');
            props.setAuth(true);
-       
         }
-       
-      }, 2000);
+      }, 1000);
       
       return () => clearTimeout(timer);
 
-    },[registered])   
+    },[registered])    
+
+
     
     const Emoji = props => (
         <span
@@ -45,17 +45,17 @@ function RegisterForm(props) {
 
       const onSubmitForm = async e => {
         e.preventDefault();
-        console.log("submitted");
+        //console.log("submitted");
        try {
         const body = {userName,email,password};
-        const response = await fetch("http://localhost:5000/users/register", {
+        const response = await fetch("http://localhost:8000/users/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body)
         });
 
           const parseRes = await response.json();
-          console.log(parseRes)
+          
 
       if (parseRes.jwtToken) {
          setRegistered(true)
@@ -68,9 +68,8 @@ function RegisterForm(props) {
         setPassword("")
       }
 
-        
-  
-       
+     
+       //console.log(error)
         
        
       } catch (err) {

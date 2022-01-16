@@ -1,8 +1,8 @@
 import React from 'react'
-import tourist_trips from '../../assets/tourist_trips.jpg';
+//import tourist_trips from '../../assets/tourist_trips.jpg';
 import { MDBCard,MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import './trips.css'
-import { FaTripadvisor } from 'react-icons/fa';
+//import { FaTripadvisor } from 'react-icons/fa';
 
 function TripCard({showModal,idx,key,trip}) {
     
@@ -25,11 +25,12 @@ function TripCard({showModal,idx,key,trip}) {
      const mimeType = 'image/jpg'
 
     return (
+        
                <MDBCol >
         <MDBCard className="padding-cards" >
         <MDBRow >
             <MDBCol md='6'>
-                <MDBCardImage src={`data:${mimeType};base64,${b64}`} className='pt-4' alt='trip' fluid />
+                <MDBCardImage src={`data:${mimeType};base64,${b64}`} className='pt-4 imgTrip' alt='trip' fluid  />
             </MDBCol>
         <MDBCol md='6'>
         <MDBCardBody >
