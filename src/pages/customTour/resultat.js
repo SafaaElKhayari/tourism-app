@@ -14,10 +14,9 @@ function Result() {
   //count places events hotels restaurants
   const [count,setCount]=useState({})
   //slideshow of cards index
-  const [slideIndex,setSlideIndex]= useState({index1: 0, index2: 1, index3: 2});
+  const [slideIndex,setSlideIndex]= useState({index1: 0, index2: 1, index3:2 });
   const {index1,index2,index3}=slideIndex;
   const {pCount,eCount,hCount,rCount}=count
-
 
 //get all data
   useEffect( async () => {
@@ -141,18 +140,20 @@ function Result() {
           setSlideIndex({...slideIndex,index3:0})
           return 0
         }  
-        else  return index
+        else  
+        return index
       }
 
-   
+      //console.log(index3)
+
 
 
     return (
 
         
         <div className="stepper-inner container section">
-          {(places.length === 0)?(<div className="loading-result"><h3 className="pt-5 loading-text">Fetching magic for you ... </h3>  <Spinner animation="border" variant="success" size="xxl" /></div>)
-          :(<div className="contents"> 
+          {(places.length >= 5)?
+          (<div className="contents"> 
             
             <div class="btn-group section1">
               <a href="#" class="btn  btn-section btn-section-left" aria-current="page">Places covered<br/> <span>{pCount} Places</span></a>
@@ -162,7 +163,9 @@ function Result() {
           </div> 
 
 
-          <div className="map">    <MapHere places={getAllPlaces}/>  </div>
+          <div className="map">    <MapHere places={getAllPlaces}/> 
+          
+           </div>
 
         
           <div class="btn-group section-down1">
@@ -173,18 +176,18 @@ function Result() {
                 </div>
 
                 <div class="btn  btn-section-down ">
-                <CardResult  place={getPlaceIndex(checkIndex1(index2))} index={checkIndex2(index2) }/>
+                <CardResult  place={getPlaceIndex(checkIndex2(index2))} index={checkIndex2(index2) }/>
                 </div>
 
                 <div class="btn btn-section-down">
-                <CardResult place={getPlaceIndex(checkIndex1(index3))} index={checkIndex3(index3)}/> 
+                <CardResult place={getPlaceIndex(checkIndex3(index3))} index={checkIndex3(index3)}/> 
                 </div>
                 <div className="angleRight" onClick={rightClick}><FaAngleDoubleRight size={40} /></div>
                 
             </div>   
             
             
-        </div>)}
+        </div>):(<div className="loading-result"><h3 className="pt-5 loading-text">Fetching magic for you ... </h3>  <Spinner animation="border" variant="success" size="xxl" /></div>)}
                     
         
 

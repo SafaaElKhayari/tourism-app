@@ -42,8 +42,10 @@ const Footer = () => {
             </h6>
             <hr className="line accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
             <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos omnis ullam deleniti id dolorem commodi libero harum eveniet quaerat, aspernatur in cupiditate autem corrupti dicta quasi porro reiciendis sapiente est.
-            </p>
+            Our guides provides detailed and accurate travel content about Chefchaouen city, designed to inspire travellers. 
+            It covers all aspects: Monuments, Transport,Entertainment and Trip Guiding 
+            <br/>Our team are people, like you, doing this for the love of it. 
+              </p>
           </MDBCol>
           <MDBCol md="2" lg="2" xl="2" className="mb-4">
             <h6 className="text-uppercase title">

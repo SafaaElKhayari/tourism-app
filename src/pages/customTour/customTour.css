@@ -624,3 +624,15 @@
 .loading-result {
   margin: 50px 400px;
 }
+
+.start-button {
+  position: absolute;
+  font-size: larger;
+  z-index: 1;
+  background-color: #ffc107;
+  font-family: "Poppins", sans-serif;
+  height: 60px;
+  width: 200px;
+  left: 0px;
+  top: 0px;
+}
